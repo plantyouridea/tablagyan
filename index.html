@@ -17,7 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
@@ -42,12 +45,76 @@
     />
 
     <link rel="stylesheet" href="static/css/index.css" />
+
+    <style>
+      .playfair-display {
+        font-family: "Playfair Display", serif;
+      }
+      .gwendolyn-bold {
+        font-family: "Gwendolyn", cursive;
+        font-weight: bold;
+      }
+      .open-sans {
+        font-family: "Open Sans", sans-serif;
+      }
+      .hubballi-regular {
+        font-family: "Hubballi", sans-serif;
+      }
+      .animate-fade-up {
+        animation: fadeUp 0.5s ease-in;
+      }
+      .animate-slide-in-1 {
+        animation: slideIn 0.5s ease-in 0.1s;
+      }
+      .animate-slide-in-2 {
+        animation: slideIn 0.5s ease-in 0.2s;
+      }
+      .animate-slide-in-3 {
+        animation: slideIn 0.5s ease-in 0.3s;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .animate-infinite-scroll {
+        animation: infiniteScroll 20s linear infinite;
+      }
+      @keyframes infiniteScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
   </head>
 
   <!--tabla cursor-->
   <body class="pt-20 bg-white text-gray-800">
-
-
     <!-- Navigation Bar -->
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
@@ -107,18 +174,16 @@
           </div>
         </div>
 
-
-
         <a
           href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
         <a
-        href="gallery.html"
-        class="text-[#3e2723] hover:text-[#b7410e] transition"
-        >Gallery</a
-      >
+          href="gallery.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Gallery</a
+        >
         <a
           href="contact.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
@@ -156,7 +221,7 @@
 
       <!-- Mobile Menu Dropdown -->
       <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg z-50 transition-all duration-300 max-h-0 overflow-hidden"
         id="menu-content"
       >
         <div
@@ -192,91 +257,75 @@
           class="w-8 h-8"
         />
       </div>
-<!-- Hero Landing Section -->
-<section
-  class="h-screen w-full flex items-center justify-start bg-black text-white relative overflow-hidden font-serif"
->
-  <!-- Gradient overlay on left -->
-  <div
-    class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent"
-  ></div>
-
-  <!-- Left-side Title & Tagline -->
-  <div
-    class="z-20 hero-content px-4 sm:px-6 md:pl-16 w-full max-w-full"
-    data-aos="fade-up"
-    data-aos-duration="2000"
-  >
-    <!-- Heading Rotator -->
-    <div
-      id="text-rotator"
-      class="relative h-[6rem] sm:h-[8rem] md:h-[10rem] lg:h-[12rem] w-full overflow-hidden leading-none"
-    >
-      <!-- English -->
-      <h1
-        class="gwendolyn-bold  rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-100 transition-opacity duration-1000 text-left transform -translate-y-1/2"
+      <!-- Hero Landing Section -->
+      <section
+        class="h-screen w-full flex items-center justify-start bg-black text-white relative overflow-hidden font-serif"
       >
-        TablaGyan
-      </h1>
-      <!-- Hindi -->
-      <h1
-        class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2", style="font-family: 'Kalam', cursive;font-weight: 700"
-      
+        <!-- Gradient overlay on left -->
+        <div
+          class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent"
+        ></div>
+
+        <!-- Left-side Title & Tagline -->
+        <div
+          class="z-20 hero-content px-4 sm:px-6 md:pl-16 w-full max-w-full"
+          data-aos="fade-up"
+          data-aos-duration="2000"
         >
-        तबलाग्यान्
-      </h1>
-      <!-- Kannada -->
-      <h1
-        class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2", style="font-family: 'Hubballi', sans-serif; font-weight: 400"
-      >
-        ತಬಲಾಗ್ಯಾನ್
-      </h1>
-    </div>
+          <!-- Heading Rotator -->
+          <div
+            id="text-rotator"
+            class="relative h-[6rem] sm:h-[8rem] md:h-[10rem] lg:h-[12rem] w-full overflow-hidden leading-none"
+          >
+            <!-- English -->
+            <h1
+              class="gwendolyn-bold rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-100 transition-opacity duration-1000 text-left transform -translate-y-1/2"
+            >
+              TablaGyan
+            </h1>
+            <!-- Hindi -->
+            <h1
+              class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2"
+              ,
+              style="font-family: 'Kalam', cursive; font-weight: 700"
+            >
+              तबलाग्यान्
+            </h1>
+            <!-- Kannada -->
+            <h1
+              class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2"
+              ,
+              style="font-family: 'Hubballi', sans-serif; font-weight: 400"
+            >
+              ತಬಲಾಗ್ಯಾನ್
+            </h1>
+          </div>
 
-    <!-- Subheading -->
-    <p
-      class="open-sans text-base sm:text-lg md:text-xl lg:text-2xl italic text-yellow-100 mt-2 sm:mt-4 md:mt-6 lg:mt-10 tracking-wide ml-4 sm:ml-6 md:ml-8 lg:ml-16"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      Express Music 🎶...Impress Life..!
-    </p>
-  </div>
+          <!-- Subheading -->
+          <p
+            class="open-sans text-base sm:text-lg md:text-xl lg:text-2xl italic text-yellow-100 mt-2 sm:mt-4 md:mt-6 lg:mt-10 tracking-wide ml-4 sm:ml-6 md:ml-8 lg:ml-16"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Express Music 🎶...Impress Life..!
+          </p>
+        </div>
 
-  <div class="relative h-screen w-full overflow-hidden">
-    <img
-      id="image1"
-      src="static/images/bg1.jpeg"
-      class="absolute inset-0 h-full w-full object-cover object-right opacity-40 transition-opacity duration-1000"
-    />
-    <img
-      id="image2"
-      src="static/images/bg2.jpeg"
-      class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
-    />
-  </div>
+        <div class="relative h-screen w-full overflow-hidden">
+          <img
+            id="image1"
+            src="static/images/bg1.jpeg"
+            class="absolute inset-0 h-full w-full object-cover object-right opacity-40 transition-opacity duration-1000"
+          />
+          <img
+            id="image2"
+            src="static/images/bg2.jpeg"
+            class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
+          />
+        </div>
 
-  <script>
-    let showFirst = true;
-    setInterval(() => {
-      document.getElementById("image1").classList.toggle("opacity-0");
-      document.getElementById("image2").classList.toggle("opacity-80");
-      showFirst = !showFirst;
-    }, 7000);
 
-    // Text rotator
-    const texts = document.querySelectorAll('.rotating-text');
-    let currentIndex = 0;
-    setInterval(() => {
-      texts[currentIndex].classList.remove('opacity-100');
-      texts[currentIndex].classList.add('opacity-0');
-      currentIndex = (currentIndex + 1) % texts.length;
-      texts[currentIndex].classList.remove('opacity-0');
-      texts[currentIndex].classList.add('opacity-100');
-    }, 3000);
-  </script>
-</section>
-
+      </section>
 
       <!-- About Us Section -->
       <section
@@ -416,12 +465,12 @@
       <!-- Courses Offered -->
       <section
         id="courses"
-        class="py-12 md:py-12 bg-white text-center relative z-0"
+        class="py-12 md:py-16 bg-white text-center relative z-0"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         <h2
-          class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
+          class="text-3xl md:text-4xl font-bold text-[#6e2e1a] mb- md:mb-16 z-10 relative tracking-wide"
           style="font-family: 'Cinzel', serif"
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -431,10 +480,10 @@
 
         <!-- Tabla Section -->
         <h3
-          class="text-xl font-semibold text-[#7b1e1e] mb-4 z-10 relative"
+          class="text-xl font-semibold text-[#7b1e1e] mb-6 z-10 relative"
           style="font-family: 'Libre Baskerville', serif"
           data-aos="zoom-in-up"
-          data-aos-delay="300"
+          data-aos-delay="200"
         >
           Tabla
         </h3>
@@ -444,63 +493,80 @@
           data-aos-delay="300"
         >
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
               Beginner Tabla
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Basics of rhythm and hand practice.
+              Fundamentals, rhythm basics & finger techniques.
             </p>
             <a
-              href="courses.html"
+              href="courses.html#tabla-beginner"
               class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
-              Intermediate Tabla
+              Intermediate Tabla – Level 1
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Taals, improvisation basics.
+              Taals, variations & song accompaniment.
             </p>
             <a
-              href="courses.html"
-              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+              href="courses.html#tabla-intermediate1"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
+          >
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Intermediate Tabla – Level 2
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
+              Advanced taals, gharana repertoire & stage prep.
+            </p>
+            <a
+              href="courses.html#tabla-intermediate2"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
+              Learn more
+            </a>
+          </div>
+
+          <div
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
               Advanced Tabla
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Stage performance & advanced taals.
+              Mastery in solos, creative compositions & concerts.
             </p>
             <a
-              href="courses.html"
-              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+              href="courses.html#tabla-advanced"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
         </div>
 
         <!-- Vocals Section -->
         <h3
-          class="text-xl font-semibold text-[#7b1e1e] mb-4 z-10 relative"
+          class="text-xl font-semibold text-[#7b1e1e] mb-6 z-10 relative"
           style="font-family: 'Libre Baskerville', serif"
           data-aos="zoom-in-up"
-          data-aos-delay="300"
+          data-aos-delay="200"
         >
           Vocals
         </h3>
@@ -510,341 +576,460 @@
           data-aos-delay="300"
         >
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
               Beginner Vocals
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Voice culture, basic ragas.
+              Voice training & basic ragas.
             </p>
             <a
-              href="courses.html"
-              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+              href="courses.html#vocals-beginner"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
               Intermediate Vocals
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Intermediate ragas & bandishes.
+              Classical & semi-classical singing.
             </p>
             <a
-              href="courses.html"
-              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+              href="courses.html#vocals-intermediate"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-md w-full md:w-64 text-left cursor-pointer z-10"
           >
             <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
               Advanced Vocals
             </h4>
             <p class="short-desc text-sm text-[#4b2e2e]">
-              Performance level training.
+              Professional-level training & concerts.
             </p>
             <a
-              href="courses.html"
-              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+              href="courses.html#vocals-advanced"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
             >
-              Click to know more
+              Learn more
             </a>
           </div>
         </div>
       </section>
 
       <!--photo section-->
-      <section class="py-4 bg-[#fef7e5]">
-        <!-- Section Title -->
-        <h2
-          class="pt-12 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
-          style="font-family: 'Cinzel', serif"
-        >
-          Photo Gallery
-        </h2>
+<!-- Photo Section -->
+<section class="py-2 bg-[#fffaf0]">
+  <!-- Section Title -->
+  <h2
+    class="pt-12 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
+    style="font-family: 'Cinzel', serif"
+  >
+    Photo Gallery
+  </h2>
 
-        <!-- Main Gallery Container -->
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-          <!-- Main Image Display with black background and containment -->
-          <div
-            class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
-          >
-            <img
-              id="mainImage"
-              src="static/images/gallery/tg1.jpeg"
-              alt="Main Gallery Image"
-              class="w-full h-full object-contain transition-all duration-500"
-            />
+  <!-- Main Gallery Container -->
+  <div class="max-w-4xl mx-auto px-4 md:px-8 mb-10">
+    <!-- Main Image Display with black background and containment -->
+    <div
+      class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
+    >
+      <img
+        id="mainImage"
+        src=""
+        alt="Main Gallery Image"
+        class="w-full h-full object-contain transition-all duration-500"
+      />
+      <!-- Left Arrow -->
+      <button
+        onclick="prevImage()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
+      >
+        &#8592;
+      </button>
+      <!-- Right Arrow -->
+      <button
+        onclick="nextImage()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
+      >
+        &#8594;
+      </button>
+    </div>
+    <!-- Thumbnails -->
+    <div id="thumbnailContainer" class="flex flex-wrap justify-center gap-4 mt-6">
+      <!-- Thumbnails will be dynamically populated -->
+    </div>
+  </div>
+</section>
+<script>
+// GitHub repository details
+const owner = 'cksachdev';
+const repo = 'tablagyan';
+const galleryPath = 'static/frontpage/';
+const imageExtensions = ['.jpg', '.jpeg', '.png'];
+let images = [];
+let currentIndex = 0;
 
-            <!-- Left Arrow -->
-            <button
-              onclick="prevImage()"
-              class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-            >
-              &#8592;
-            </button>
+// Function to check if a file is an image
+function isImageFile(fileName) {
+  return imageExtensions.some(ext => fileName.toLowerCase().endsWith(ext));
+}
 
-            <!-- Right Arrow -->
-            <button
-              onclick="nextImage()"
-              class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-            >
-              &#8594;
-            </button>
-          </div>
+// Function to fetch images from GitHub
+async function fetchImages() {
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${galleryPath}`;
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+    const files = await response.json();
+    images = files
+      .filter(file => file.type === 'file' && isImageFile(file.name))
+      .map(file => `${galleryPath}${file.name}`);
+    if (images.length === 0) {
+      document.getElementById('thumbnailContainer').innerHTML = '<p class="text-center text-gray-600 font-serif">No images found in the frontpage folder.</p>';
+      return;
+    }
+    renderThumbnails();
+    setImage(0); // Set initial image
+  } catch (error) {
+    console.error('Error fetching images:', error);
+    document.getElementById('thumbnailContainer').innerHTML = '<p class="text-center text-gray-600 font-serif">Error loading images.</p>';
+  }
+}
 
-          <!-- Thumbnails -->
-          <div class="flex flex-wrap justify-center gap-4 mt-6">
-            <img
-              src="static/images/gallery/tg1.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(0)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-2.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(1)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-3.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(2)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-4.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(3)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-5.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(4)"
-            />
-          </div>
-        </div>
-      </section>
+// Function to render thumbnails
+function renderThumbnails() {
+  const thumbnailContainer = document.getElementById('thumbnailContainer');
+  thumbnailContainer.innerHTML = images.map((img, index) => `
+    <img
+      src="https://raw.githubusercontent.com/${owner}/${repo}/main/${img}"
+      class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
+      onclick="setImage(${index})"
+      alt="Gallery Image ${index + 1}"
+    />
+  `).join('');
+}
+
+// Function to set main image
+function setImage(index) {
+  currentIndex = index;
+  const mainImage = document.getElementById('mainImage');
+  mainImage.src = `https://raw.githubusercontent.com/${owner}/${repo}/main/${images[index]}`;
+  mainImage.alt = `Gallery Image ${index + 1}`;
+}
+
+// Function to show previous image
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  setImage(currentIndex);
+}
+
+// Function to show next image
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  setImage(currentIndex);
+}
+
+// Text rotation functionality
+const texts = document.querySelectorAll("#text-rotator .rotating-text");
+let current = 0;
+
+setInterval(() => {
+  texts[current].classList.remove("opacity-100");
+  texts[current].classList.add("opacity-0");
+  current = (current + 1) % texts.length;
+  texts[current].classList.remove("opacity-0");
+  texts[current].classList.add("opacity-100");
+}, 5000);
+
+// Course box expand functionality
+const boxes = document.querySelectorAll(".course-box");
+const overlay = document.getElementById("overlay");
+let activeBox = null;
+
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (activeBox && activeBox === box) {
+      box.classList.remove("expanded");
+      overlay.classList.remove("active");
+      activeBox = null;
+    } else {
+      boxes.forEach((b) => b.classList.remove("expanded"));
+      box.classList.add("expanded");
+      overlay.classList.add("active");
+      activeBox = box;
+    }
+  });
+});
+
+document.addEventListener("click", () => {
+  if (activeBox) {
+    activeBox.classList.remove("expanded");
+    overlay.classList.remove("active");
+    activeBox = null;
+  }
+});
+
+
+
+
+</script>
     </div>
 
     <!--youtube-->
-    <section class="py-4 bg-[#fef7e5]">
-<section class="py-16 bg-[#fef7e5]">
-  <div class="w-full px-2 space-y-16">
-    <!-- 🎥 Recent Class Videos -->
-    <div class="space-y-4">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e] playfair-display gwendolyn-bold animate-fade-up text-center">
-        Recent Class Videos
-      </h2>
-      <div class="relative">
-        <!-- Carousel Container -->
-        <div class="class-video-carousel overflow-hidden whitespace-nowrap">
-          <div class="inline-flex gap-6 px-4 animate-infinite-scroll">
-            <!-- Original Video Set -->
-            <!-- Video 1 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Beginner Techniques">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Beginner Techniques"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
-            </div>
+    <section class="py-2 bg-[#fef7e5]">
+      <section class="py-4 bg-[#fef7e5] mb-10">
+        <div class="w-full px-2 space-y-4">
+          <!-- 🎥 Recent Class Videos -->
+          <div class="space-y-4">
+            <h2
+              class="pt-8 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
+              style="font-family: 'Cinzel', serif"
+            >
+              Youtube Videos
+            </h2>
+            <div class="relative">
+              <!-- Carousel Container -->
+              <div
+                class="class-video-carousel overflow-hidden whitespace-nowrap"
+              >
+                <div class="inline-flex gap-6 px-4 animate-infinite-scroll">
+                  <!-- Original Video Set -->
+                  <!-- Video 1 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Beginner Techniques"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/5S7uTzBb4h0?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Beginner Techniques"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:23</span
+                    >
+                  </div>
 
-            <!-- Video 2 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://youtube.com/embed/laYJm7wlKrg?si=wG8oZ0f3fHYpTKFf?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
-            </div>
+                  <!-- Video 2 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/Gdr-sSHs96A?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >0:54</span
+                    >
+                  </div>
 
-            <!-- Video 3 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://youtube.com/embed/_BvXnK8u-Tk?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:12</span>
-            </div>
+                  <!-- Video 3 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/KkccT_8eKAU?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:12</span
+                    >
+                  </div>
 
-            <!-- Video 4 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://youtube.com/embed/PEwsGeUbFK8?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:45</span>
-            </div>
+                  <!-- Video 4 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/Yq_u9x8A0zY?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:45</span
+                    >
+                  </div>
 
-            <!-- Video 5 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Advanced Performance">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Advanced Performance"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
-            </div>
+                  <!-- Video 5 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Advanced Performance"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/sON_wqNzhKM?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Advanced Performance"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:23</span
+                    >
+                  </div>
 
-            <!-- Duplicated Video Set for Infinite Scroll -->
-            <!-- Video 1 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Beginner Techniques">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Beginner Techniques"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
-            </div>
+                  <!-- Duplicated Video Set for Infinite Scroll -->
+                  <!-- Video 1 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Beginner Techniques"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/dUMpdc7JMi4?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Beginner Techniques"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:23</span
+                    >
+                  </div>
 
-            <!-- Video 2 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
-            </div>
+                  <!-- Video 2 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/laYJm7wlKrg?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >0:54</span
+                    >
+                  </div>
 
-            <!-- Video 3 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://youtube.com/embed/_BvXnK8u-Tk?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:12</span>
-            </div>
+                  <!-- Video 3 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/_BvXnK8u-Tk?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:12</span
+                    >
+                  </div>
 
-            <!-- Video 4 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
-              <iframe
-                class="w-full h-full"
-                src="https://youtube.com/embed/PEwsGeUbFK8?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Intermediate Taal Practice"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:45</span>
-            </div>
+                  <!-- Video 4 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Intermediate Taal Practice"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://youtube.com/embed/PEwsGeUbFK8?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Intermediate Taal Practice"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:45</span
+                    >
+                  </div>
 
-            <!-- Video 5 -->
-            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Advanced Performance">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
-                title="TablaGyan Class Video: Advanced Performance"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
+                  <!-- Video 5 -->
+                  <div
+                    class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative"
+                    data-title="Advanced Performance"
+                  >
+                    <iframe
+                      class="w-full h-full"
+                      src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
+                      title="TablaGyan Class Video: Advanced Performance"
+                      frameborder="0"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                    <span
+                      class="absolute top-2 right-2 text-white text-sm open-sans"
+                      style="text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)"
+                      >1:23</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!--shorts section-->
-<section class="py-16 bg-[#fef7e5]">
-  <div class="w-full px-2 space-y-16">
-    <!-- Recent Shorts Section -->
-    <section class="py-12 md:py-12 bg-white text-center">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e] gwendolyn-bold animate-fade-up">
-        Recent Shorts
-      </h2>
-      <div class="relative shorts-carousel">
-        <div class="shorts-container flex flex-row justify-center gap-6 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-          <!-- Video 1 -->
-          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-1" data-title="Beginner Taal Practice">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
-          </div>
-
-          <!-- Video 2 -->
-          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-2" data-title="Intermediate Raga Session">
-            <iframe class="w-full h-full" src="https://youtube.com/embed/Fu3p5lcHBD4?si=yh1ptddA0wLO3xK9?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:55</span>
-          </div>
-
-          <!-- Video 3 -->
-          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-3" data-title="Advanced Performance">
-            <iframe class="w-full h-full" src="https://youtube.com/embed/pBFKJ_DDL5o?si=_pHsXtkLM-7I9knC?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:34</span>
-          </div>
-
-                    <!-- Video 1 -->
-          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-1" data-title="Beginner Taal Practice">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
-          </div>
-
-          <!-- Video 2 -->
-          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-2" data-title="Intermediate Raga Session">
-            <iframe class="w-full h-full" src="https://youtube.com/embed/Fu3p5lcHBD4?si=yh1ptddA0wLO3xK9?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:55</span>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-  </div>
-</section>
-
-
-
-      </div>
+      </section>
     </section>
 
     <!--reviews-->
-    <section class="w-full flex justify-center items-center py-20 bg-[#fffaf0]">
+    <section
+      class="w-full flex justify-center items-center py-8 bg-[#fffaf0] pt-20"
+    >
       <div
-        class="max-w-5xl w-full px-12 py-14 bg-white/80 rounded-2xl shadow-xl border border-[#c69b58] relative"
+        class="max-w-6xl w-full px-6 md:px-10 py-6 md:py-8 bg-white/90 rounded-xl shadow-md border border-[#c69b58] relative"
       >
         <h2
-          class="text-4xl md:text-5xl font-bold text-center text-[#7b1e1e] mb-10 tracking-wide font-serif border-b-2 border-[#c69b58] pb-3"
+          class="text-xl md:text-2xl font-bold text-center text-[#7b1e1e] tracking-wide font-serif border-b-2 border-[#c69b58] pb-2 mb-4"
         >
           What Our Students Say
         </h2>
@@ -857,35 +1042,39 @@
       </div>
     </section>
 
-          <!-- CTA Section -->
-      <section class="py-12 bg-red-50">
-        <div class="text-center max-w-3xl mx-auto px-6">
-          <h3
-            class="text-2xl md:text-3xl font-bold mb-4"
-            style="font-family: 'Cinzel', serif"
-            data-aos="fade-up"
-          >
-            Ready to Start Your Musical Journey?
-          </h3>
-          <p
-            class="mb-6 text-gray-700"
-            style="font-family: 'Hubballi', sans-serif"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Whether you're a beginner or an advanced musician, TablaGyan offers courses tailored to your needs. Join our community and let rhythm and melody transform your life.
-          </p>
-          <a
-            href="contact.html"
-            class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-            style="font-family: 'Libre Baskerville', serif"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Contact Us to Enroll
-          </a>
-        </div>
-      </section>
+    <!-- CTA Section -->
+    <section class="py-12 bg-red-50">
+      <div class="text-center max-w-3xl mx-auto px-6">
+        <h3
+          class="text-2xl md:text-3xl font-bold mb-4"
+          style="font-family: 'Cinzel', serif"
+          data-aos="fade-up"
+        >
+          Ready to Start Your Musical Journey?
+        </h3>
+        <p
+          class="mb-6 text-gray-700"
+          style="font-family: 'Hubballi', sans-serif"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Whether you're a beginner or an advanced musician, TablaGyan offers
+          courses tailored to your needs. Join our community and let rhythm and
+          melody transform your life.
+        </p>
+        <a
+          href="contact.html"
+          class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+          style="font-family: 'Libre Baskerville', serif"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Contact Us to Enroll
+        </a>
+      </div>
+    </section>
+
+
     <script
       src="https://static.elfsight.com/platform/platform.js"
       async
@@ -900,7 +1089,7 @@
 
     <!-- Footer -->
     <footer
-      class=" bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
+      class="bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
     >
       <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
         <!-- Instagram -->
@@ -980,13 +1169,156 @@
     <script src="index.js"></script>
     <script>
       AOS.init();
-              // Music Cursor
-        const musicCursor = document.getElementById("music-cursor");
-        document.addEventListener("mousemove", (e) => {
-          musicCursor.style.left = `${e.clientX + 15}px`;
-          musicCursor.style.top = `${e.clientY + 25}px`;
-          musicCursor.style.opacity = 1;
-        });
+      // Music Cursor
+      const musicCursor = document.getElementById("music-cursor");
+      document.addEventListener("mousemove", (e) => {
+        musicCursor.style.left = `${e.clientX + 15}px`;
+        musicCursor.style.top = `${e.clientY + 25}px`;
+        musicCursor.style.opacity = 1;
+      });
+    </script>
+
+    <!-- Load config.js -->
+    <script src="config.js"></script>
+    <!-- JavaScript to fetch and render videos -->
+    <!-- <script>
+    const BASE_URL = 'https://www.googleapis.com/youtube/v3';
+
+    async function getUploadsPlaylistId() {
+      const response = await fetch(`${BASE_URL}/channels?part=contentDetails&id=${CONFIG.CHANNEL_ID}&key=${CONFIG.YOUTUBE_API_KEY}`);
+      const data = await response.json();
+      if (data.items && data.items.length > 0) {
+        return data.items[0].contentDetails.relatedPlaylists.uploads;
+      }
+      throw new Error('Unable to fetch uploads playlist ID');
+    }
+
+    async function getVideosFromPlaylist(playlistId, maxResults = 10) {
+      const videos = [];
+      let nextPageToken = '';
+      while (videos.length < maxResults) {
+        const response = await fetch(
+          `${BASE_URL}/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&maxResults=${Math.min(50, maxResults - videos.length)}&pageToken=${nextPageToken}&key=${CONFIG.YOUTUBE_API_KEY}`
+        );
+        const data = await response.json();
+        const videoIds = data.items.map(item => item.contentDetails.videoId);
+        
+        if (videoIds.length > 0) {
+          const videoResponse = await fetch(
+            `${BASE_URL}/videos?part=snippet,contentDetails,statistics&id=${videoIds.join(',')}&key=${CONFIG.YOUTUBE_API_KEY}`
+          );
+          const videoData = await videoResponse.json();
+          
+          videoData.items.forEach(item => {
+            const duration = parseDuration(item.contentDetails.duration);
+            videos.push({
+              videoId: item.id,
+              title: item.snippet.title,
+              publishedAt: item.snippet.publishedAt,
+              duration: item.contentDetails.duration,
+              durationSeconds: duration,
+              isShort: duration <= 60,
+              viewCount: item.statistics.viewCount || '0'
+            });
+          });
+        }
+        
+        nextPageToken = data.nextPageToken || '';
+        if (!nextPageToken) break;
+      }
+      return videos.slice(0, maxResults);
+    }
+
+    function parseDuration(duration) {
+      const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+      const hours = parseInt(match[1]) || 0;
+      const minutes = parseInt(match[2]) || 0;
+      const seconds = parseInt(match[3]) || 0;
+      return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    function renderVideos(videos) {
+      const classVideosContainer = document.getElementById('class-videos-container');
+      const shortsContainer = document.getElementById('shorts-container');
+      
+      const classVideos = videos.filter(video => !video.isShort);
+      const shorts = videos.filter(video => video.isShort);
+      
+      const classVideoHtml = classVideos.map((video, index) => `
+        <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="${video.title}">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&controls=1" title="TablaGyan Class Video: ${video.title}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${formatDuration(video.duration)}</span>
+        </div>
+      `).join('');
+      
+      classVideosContainer.innerHTML = classVideoHtml + classVideoHtml; // Duplicate for infinite scroll
+      
+      const shortsHtml = shorts.map((video, index) => `
+        <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-${(index % 3) + 1}" data-title="${video.title}">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${formatDuration(video.duration)}</span>
+        </div>
+      `).join('');
+      
+      shortsContainer.innerHTML = shortsHtml;
+    }
+
+    function formatDuration(duration) {
+      const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+      const hours = parseInt(match[1]) || 0;
+      const minutes = parseInt(match[2]) || 0;
+      const seconds = parseInt(match[3]) || 0;
+      if (hours > 0) return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    async function main() {
+      if (!CONFIG.YOUTUBE_API_KEY || CONFIG.YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE') {
+        console.error('Please provide a valid YouTube API key in config.js');
+        document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Please configure your YouTube API key.</p>';
+        document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Please configure your YouTube API key.</p>';
+        return;
+      }
+      
+      try {
+        const playlistId = await getUploadsPlaylistId();
+        const videos = await getVideosFromPlaylist(playlistId, 10);
+        renderVideos(videos);
+      } catch (error) {
+        console.error('Error fetching videos:', error);
+        document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Error loading videos. Please try again later.</p>';
+        document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Error loading Shorts. Please try again later.</p>';
+      }
+    }
+
+    // Check if CONFIG is defined and run main
+    if (typeof CONFIG !== 'undefined') {
+      main();
+    } else {
+      console.error('config.js not loaded or CONFIG not defined');
+      document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Configuration file missing. Please create config.js.</p>';
+      document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Configuration file missing. Please create config.js.</p>';
+    }
+  </script> -->
+    <script>
+      const music = document.getElementById("background-music");
+      const musicIcon = document.getElementById("music-icon");
+      let isPlaying = false;
+
+      function toggleMusic() {
+        if (isPlaying) {
+          music.pause();
+          musicIcon.src = "/static/volume-no.png"; // Change icon to 'off'
+        } else {
+          music.play();
+          musicIcon.src = "/static/volume-up.png"; // Change icon to 'on'
+        }
+        isPlaying = !isPlaying;
+      }
+
+      document
+        .getElementById("music-toggle")
+        .addEventListener("click", toggleMusic);
     </script>
   </body>
 </html>

@@ -15,41 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Kalam:wght@300;400;700&family=Hubballi&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
-        <script src="https://cdn.tailwindcss.com"></script>
-
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Swiper.js CSS -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/index.css" />
     <style>
@@ -68,7 +38,7 @@
       #pageWrapper {
         min-height: 100vh;
         visibility: visible;
-        padding-top: 80px; /* Ensure content isn't hidden under fixed nav */
+        padding-top: 80px;
       }
       .course-card {
         background-color: #fdf2d0;
@@ -84,15 +54,70 @@
       #menu-toggle:checked ~ #menu-content {
         max-height: 500px;
       }
-      /* Debug style to ensure content visibility */
       section {
         min-height: 200px;
+      }
+      .max-w-5xl {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 16px;
+      }
+      .carousel {
+        position: relative;
+      }
+      .swiper {
+        width: 100%;
+        padding: 16px 0;
+      }
+      .swiper-slide {
+        width: 300px;
+        flex-shrink: 0;
+      }
+      .course-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .course-card:hover {
+        transform: translateY(-4px);
+      }
+      .course-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #800000;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 20px;
+      }
+      .swiper-wrapper {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .swiper-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .swiper-slide {
+          width: 33.333%;
+        }
       }
     </style>
   </head>
   <body class="pt-14 bg-white text-gray-800">
-
-
     <!-- Navigation Bar -->
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
@@ -116,7 +141,6 @@
           </span>
         </div>
       </div>
-
       <!-- Desktop Navigation Links -->
       <div
         class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative"
@@ -127,7 +151,6 @@
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Home</a
         >
-
         <div class="relative group">
           <div class="flex flex-col">
             <a
@@ -151,13 +174,15 @@
             </div>
           </div>
         </div>
-
-
-
         <a
           href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
+        >
+        <a
+          href="gallery.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Gallery</a
         >
         <a
           href="contact.html"
@@ -170,10 +195,8 @@
           >FAQ</a
         >
       </div>
-
       <!-- Mobile Menu Toggle (Checkbox) -->
       <input type="checkbox" id="menu-toggle" class="hidden" />
-
       <!-- Mobile Menu Button -->
       <label
         for="menu-toggle"
@@ -193,10 +216,9 @@
           ></path>
         </svg>
       </label>
-
       <!-- Mobile Menu Dropdown -->
       <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg z-50 transition-all duration-300 max-h-0 overflow-hidden"
         id="menu-content"
       >
         <div
@@ -206,14 +228,13 @@
           <a href="index.html">Home</a>
           <a href="about.html">TablaGyan Academy</a>
           <a href="about.html#gurus">TablaGyan Gurus</a>
-   
+          <a href="gallery.html">Gallery</a>
           <a href="courses.html">Courses</a>
           <a href="contact.html">Contact</a>
           <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
-
     <!-- Page Content -->
     <div id="pageWrapper">
       <!-- Audio Element -->
@@ -230,10 +251,8 @@
           src="/static/volume-up.png"
           alt="Music Toggle"
           class="w-8 h-8"
-          onerror="this.src='https://via.placeholder.com/32?text=Music'; console.warn('Music icon not found.')"
         />
       </div>
-
       <!-- Courses Section -->
       <section class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16">
         <h2
@@ -253,106 +272,198 @@
           >
             Tabla Courses
           </h3>
-          <div
-            class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <!-- Beginner Tabla -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Beginner Tabla
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                This course introduces students to the fundamentals of tabla playing. Learn the basics of rhythm, hand techniques, and foundational bols (syllables) to build a strong base in Indian percussion.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 6 months</li>
-                <li>Focus: Hand positioning, basic rhythms (e.g., Teen Taal), simple compositions</li>
-                <li>Target: Beginners with no prior experience</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
-            </div>
-            <!-- Intermediate Tabla -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Intermediate Tabla
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                Build on your foundational skills with various taals and improvisation techniques. Enhance your ability to play complex rhythms and accompany other instruments.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 9 months</li>
-                <li>Focus: Multiple taals (e.g., Jhaptaal, Rupak), improvisation, accompaniment</li>
-                <li>Target: Students with basic tabla knowledge</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
-            </div>
-            <!-- Advanced Tabla -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Advanced Tabla
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                Designed for seasoned players, this course focuses on stage performance, advanced taals, and intricate compositions for solo and accompaniment roles.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 12 months</li>
-                <li>Focus: Advanced taals (e.g., Ektaal, Ada Chautaal), solo performances, fusion</li>
-                <li>Target: Experienced tabla players</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
+          <div class="carousel" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- Beginner Tabla -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/beginner-tabla.jpg"
+                      alt="Beginner Tabla Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Beginner Tabla
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Learn the History, Importance, Fundamentals of Tabla
+                      playing, Basics of Rhythm, Fingering techniques to create
+                      different sounds, foundational Bols (syllables) to build a
+                      strong base on Vocabulary of Tabla in Music.
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: Typically 4-5 months</li>
+                      <li>
+                        Focus: Finger technique, Recitation, Basic Rhythms,
+                        Vocabulary, simple compositions
+                      </li>
+                      <li>
+                        Suitable for: Beginners with Little or No experience in
+                        music
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+                <!-- Intermediate Level-1 Tabla -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/intermediate1-tabla.jpg"
+                      alt="Intermediate Level-1 Tabla Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Intermediate Level-1 Tabla
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Build on your foundational skills & Apply them to graduate
+                      & become a successful accompanist. Start becoming
+                      conversant with foot tapping beats enriched with melody
+                      and speed, by using the Rhythmic Patterns and Variations
+                      creatively. (Stage performance opportunity will be given)
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: Typically 1.5 – 2.0 years</li>
+                      <li>
+                        Focus: Basic Taals, Variations, Multi-genre Song
+                        accompaniment skills (Bhajans, Bollywood, Ghazal, Tabla
+                        Covers, etc)
+                      </li>
+                      <li>
+                        Suitable for: Learners who have completed the Beginners
+                        course
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+                <!-- Intermediate Level-2 Tabla -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/intermediate2-tabla.jpg"
+                      alt="Intermediate Level-2 Tabla Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Intermediate Level-2 Tabla
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Start shaping up into a performer by embarking on a
+                      journey of advanced Taals. Extensive training in Gharana
+                      based classical compositions till you master them to
+                      achieve fluidity in Tabla Vocabulary and Practice. (Stage
+                      performance opportunity will be given)
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: Typically 2 – 4 years</li>
+                      <li>
+                        Focus: Advanced Taals, Fixed long & Short compositions,
+                        Mastery of Tabla Gharana based repertoire, Basic
+                        Classical accompaniment
+                      </li>
+                      <li>
+                        Suitable for: Learners who have completed the
+                        Intermediate-1 course
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+                <!-- Advanced Tabla -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/advanced-tabla.jpg"
+                      alt="Advanced Tabla Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Advanced Tabla
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Master the art of Tabla..! Only for learners who are
+                      passionate about Tabla. Be ready for a lifelong
+                      association with Music where you engage in learning
+                      advanced techniques, Concert level accompaniment skills,
+                      Independent Tabla Solo performance skills and more…
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: 5+ years to endless learning..!</li>
+                      <li>
+                        Focus: Advanced Techniques, Advanced accompaniment
+                        skills, Mastery in creative / on-the-fly compositions,
+                        concert performance level preparation
+                      </li>
+                      <li>
+                        Suitable for: Learners who have completed the
+                        Intermediate-2 course
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
           <!-- Vocal Courses -->
@@ -364,111 +475,147 @@
           >
             Vocal Courses
           </h3>
-          <div
-            class="grid grid-cols-1 md:grid-cols-3 gap-8"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <!-- Beginner Vocal -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Beginner Vocal
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                Start your vocal journey with foundational training in voice culture and basic ragas, building confidence in Hindustani classical singing.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 6 months</li>
-                <li>Focus: Voice modulation, basic ragas (e.g., Yaman, Bhupali), swara practice</li>
-                <li>Target: Beginners with no prior vocal experience</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
-            </div>
-            <!-- Intermediate Vocal -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Intermediate Vocal
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                Deepen your vocal skills with intermediate ragas and bandishes, learning expressive singing techniques for classical and semi-classical styles.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 9 months</li>
-                <li>Focus: Intermediate ragas (e.g., Bageshri, Jaunpuri), bandishes, alap</li>
-                <li>Target: Students with basic vocal training</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
-            </div>
-            <!-- Advanced Vocal -->
-            <div class="course-card p-6 rounded-lg shadow-md">
-              <h4
-                class="text-xl font-semibold mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Advanced Vocal
-              </h4>
-              <p
-                class="text-gray-700 mb-4 leading-relaxed"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                Prepare for professional performances with advanced vocal training, mastering complex ragas, taans, and stage presence.
-              </p>
-              <ul
-                class="list-disc list-inside mb-4 text-gray-700"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                <li>Duration: 12 months</li>
-                <li>Focus: Complex ragas (e.g., Darbari, Todi), advanced taans, performance skills</li>
-                <li>Target: Experienced vocalists</li>
-                <li>Mode: In-person or online via Skype</li>
-                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
-              </ul>
-              <a
-                href="contact.html"
-                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Enroll Now
-              </a>
+          <div class="carousel" data-aos="fade-up" data-aos-delay="400">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- Beginner Vocal -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/beginner-vocal.jpg"
+                      alt="Beginner Vocal Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Beginner Vocal
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Start your Music journey with foundational training in the
+                      basic swaras, alankars etc to build a strong based and
+                      prepare your vocal chords for a melodious journey..!
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: Typically 3-4 months</li>
+                      <li>
+                        Focus: Voice modulation, Swaras, Alankaars, Basic Ragas
+                      </li>
+                      <li>
+                        Suitable for: Beginners with Little or No experience in
+                        music
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+                <!-- Intermediate Vocal -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/intermediate-vocal.jpg"
+                      alt="Intermediate Vocal Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Intermediate Vocal
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Deepen your skills with additional Ragas by exploring
+                      expressive singing techniques for classical and
+                      semi-classical singing styles. (Stage performance
+                      opportunity will be given)
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: Typically 1 – 1.5 years</li>
+                      <li>
+                        Focus: More Ragas, Bandishes, introduction to Alap
+                      </li>
+                      <li>
+                        Suitable for: Learners who have completed the Beginners
+                        course
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+                <!-- Advanced Vocal -->
+                <div class="swiper-slide">
+                  <div class="course-card p-6">
+                    <img
+                      src="/static/courses/advanced-vocal.jpg"
+                      alt="Advanced Vocal Course"
+                      class="course-image"
+                    />
+                    <h4
+                      class="text-xl font-semibold mb-4"
+                      style="font-family: 'Libre Baskerville', serif"
+                    >
+                      Advanced Vocal
+                    </h4>
+                    <p
+                      class="text-gray-700 mb-4 leading-relaxed"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      Prepare for professional performances with advanced vocal
+                      training, Mastery of complex Ragas. (Stage performance
+                      opportunity will be given)
+                    </p>
+                    <ul
+                      class="list-disc list-inside mb-4 text-gray-700"
+                      style="font-family: 'Hubballi', sans-serif"
+                    >
+                      <li>Duration: 5+ years to endless learning..!</li>
+                      <li>
+                        Focus: Mastery in creativity, Gharana based repertoire,
+                        complex Ragas, Bandishes
+                      </li>
+                      <li>
+                        Suitable for: Learners who have completed the
+                        Intermediate course
+                      </li>
+                    </ul>
+                    <a
+                      href="contact.html"
+                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                      style="font-family: 'Libre Baskerville', serif"
+                      >Enroll Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- CTA Section -->
       <section class="py-12 bg-red-50">
         <div class="text-center max-w-3xl mx-auto px-6">
@@ -485,7 +632,9 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Whether you're a beginner or an advanced musician, TablaGyan offers courses tailored to your needs. Join our community and let rhythm and melody transform your life.
+            Whether you're a beginner or an advanced musician, TablaGyan offers
+            courses tailored to your needs. Join our community and let rhythm
+            and melody transform your life.
           </p>
           <a
             href="contact.html"
@@ -498,14 +647,12 @@
           </a>
         </div>
       </section>
-
       <div class="visitor-counter">
         <img
           src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
           alt="Visitor Count"
         />
       </div>
-
       <!-- Footer -->
       <footer
         class="bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
@@ -576,21 +723,32 @@
           © 2025 TablaGyan. All rights reserved.
         </p>
       </footer>
-
       <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-      <script src="index.js" onerror="console.warn('index.js not found.')" defer></script>
       <script>
-        // Initialize AOS
-        try {
-          AOS.init({
-            once: true,
-            duration: 1000,
+        // Initialize Swiper
+        document.querySelectorAll(".swiper").forEach((swiperElement) => {
+          new Swiper(swiperElement, {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 32,
+              },
+            },
           });
-        } catch (e) {
-          console.warn("AOS initialization failed:", e);
-        }
-
+        });
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
         // Music Cursor
         const musicCursor = document.getElementById("music-cursor");
         document.addEventListener("mousemove", (e) => {
@@ -598,7 +756,6 @@
           musicCursor.style.top = `${e.clientY + 25}px`;
           musicCursor.style.opacity = 1;
         });
-
         // Music Toggle
         const musicToggle = document.getElementById("music-toggle");
         const backgroundMusic = document.getElementById("background-music");
@@ -606,7 +763,9 @@
         musicToggle.addEventListener("click", () => {
           try {
             if (backgroundMusic.paused) {
-              backgroundMusic.play().catch((e) => console.warn("Audio playback failed:", e));
+              backgroundMusic
+                .play()
+                .catch((e) => console.warn("Audio playback failed:", e));
               musicIcon.src = "/static/volume-up.png";
             } else {
               backgroundMusic.pause();
@@ -616,15 +775,16 @@
             console.warn("Music toggle failed:", e);
           }
         });
-
         // Mobile Menu Toggle
-        document.getElementById("menu-toggle").addEventListener("change", () => {
-          const menuContent = document.getElementById("menu-content");
-          menuContent.style.maxHeight = document.getElementById("menu-toggle").checked
-            ? "500px"
-            : "0";
-        });
-
+        document
+          .getElementById("menu-toggle")
+          .addEventListener("change", () => {
+            const menuContent = document.getElementById("menu-content");
+            menuContent.style.maxHeight = document.getElementById("menu-toggle")
+              .checked
+              ? "500px"
+              : "0";
+          });
         // Ensure pageWrapper is visible
         document.getElementById("pageWrapper").style.opacity = 1;
         document.getElementById("pageWrapper").style.transform = "none";

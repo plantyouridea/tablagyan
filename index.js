@@ -13,14 +13,7 @@ setInterval(() => {
   texts[current].classList.add("opacity-100");
 }, 5000);
 
-//gallery
-const images = [
-  "static/images/gallery/tg1.jpeg",
-  "static/images/gallery/tablagyan-2.jpeg",
-  "static/images/gallery/tablagyan-3.jpeg",
-  "static/images/gallery/tablagyan-4.jpeg",
-  "static/images/gallery/tablagyan-5.jpeg",
-];
+
 
 let currentIndex = 0;
 

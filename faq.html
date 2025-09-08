@@ -202,6 +202,24 @@
           mobileMenu.classList.add("hidden");
         }
       });
+
+      const music = document.getElementById("background-music");
+const musicIcon = document.getElementById("music-icon");
+let isPlaying = false;
+
+function toggleMusic() {
+  if (isPlaying) {
+    music.pause();
+    musicIcon.src = "/static/volume-no.png"; // Change icon to 'off'
+  } else {
+    music.play();
+    musicIcon.src = "/static/volume-up.png"; // Change icon to 'on'
+  }
+  isPlaying = !isPlaying;
+}
+
+document.getElementById("music-toggle").addEventListener("click", toggleMusic);
+
     </script>
   </head>
 
@@ -276,6 +294,11 @@
           >Courses</a
         >
         <a
+        href="gallery.html"
+        class="text-[#3e2723] hover:text-[#b7410e] transition"
+        >Gallery</a
+      >
+        <a
           href="contact.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Contact</a
@@ -322,7 +345,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">TablaGyan Academy</a>
           <a href="about.html#gurus">TablaGyan Gurus</a>
-
+          <a href="gallery.html">Gallery</a>
           <a href="courses.html">Courses</a>
           <a href="contact.html">Contact</a>
           <a href="faq.html">FAQ</a>
