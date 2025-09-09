@@ -626,8 +626,6 @@
         </div>
       </section>
 
-      <!--photo section-->
-
       <!-- Photo Section -->
 
       <section class="py-2 bg-[#fffaf0]">
@@ -641,13 +639,13 @@
 
         <!-- Main Gallery Container -->
         <div class="max-w-4xl mx-auto px-4 md:px-8 mb-10">
-          <!-- Main Image Display with black background and containment -->
+          <!-- Main Image Display -->
           <div
             class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
           >
             <img
               id="mainImage"
-              src="/static/frontpage/frontpage1.jpg"
+              src="/static/frontpage/frontpage1.JPG"
               alt="Main Gallery Image"
               class="w-full h-full object-contain transition-all duration-500"
             />
@@ -727,12 +725,6 @@
           setImage(currentIndex);
         }
 
-        // Initialize gallery
-        function initGallery() {
-          renderThumbnails();
-          setImage(0); // Ensure first image is set
-        }
-
         // Text rotation functionality
         const texts = document.querySelectorAll("#text-rotator .rotating-text");
         let current = 0;
@@ -801,7 +793,7 @@
             .catch((err) => {
               console.log("Auto-play blocked:", err);
             });
-          initGallery();
+          renderThumbnails(); // Render thumbnails on load
           AOS.init(); // Initialize AOS
         });
       </script>
