@@ -323,8 +323,6 @@
             class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
           />
         </div>
-
-
       </section>
 
       <!-- About Us Section -->
@@ -629,169 +627,184 @@
       </section>
 
       <!--photo section-->
-<!-- Photo Section -->
-<section class="py-2 bg-[#fffaf0]">
-  <!-- Section Title -->
-  <h2
-    class="pt-12 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
-    style="font-family: 'Cinzel', serif"
-  >
-    Photo Gallery
-  </h2>
 
-  <!-- Main Gallery Container -->
-  <div class="max-w-4xl mx-auto px-4 md:px-8 mb-10">
-    <!-- Main Image Display with black background and containment -->
-    <div
-      class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
-    >
-      <img
-        id="mainImage"
-        src=""
-        alt="Main Gallery Image"
-        class="w-full h-full object-contain transition-all duration-500"
-      />
-      <!-- Left Arrow -->
-      <button
-        onclick="prevImage()"
-        class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-      >
-        &#8592;
-      </button>
-      <!-- Right Arrow -->
-      <button
-        onclick="nextImage()"
-        class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-      >
-        &#8594;
-      </button>
-    </div>
-    <!-- Thumbnails -->
-    <div id="thumbnailContainer" class="flex flex-wrap justify-center gap-4 mt-6">
-      <!-- Thumbnails will be dynamically populated -->
-    </div>
-  </div>
-</section>
-<script>
-// GitHub repository details
-const owner = 'cksachdev';
-const repo = 'tablagyan';
-const galleryPath = 'static/frontpage/';
-const imageExtensions = ['.jpg', '.jpeg', '.png'];
-let images = [];
-let currentIndex = 0;
+      <!-- Photo Section -->
 
-// Function to check if a file is an image
-function isImageFile(fileName) {
-  return imageExtensions.some(ext => fileName.toLowerCase().endsWith(ext));
-}
+      <section class="py-2 bg-[#fffaf0]">
+        <!-- Section Title -->
+        <h2
+          class="pt-12 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
+          style="font-family: 'Cinzel', serif"
+        >
+          Photo Gallery
+        </h2>
 
-// Function to fetch images from GitHub
-async function fetchImages() {
-  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${galleryPath}`;
-  try {
-    const response = await fetch(url, {
-      headers: {
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-    if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
-    }
-    const files = await response.json();
-    images = files
-      .filter(file => file.type === 'file' && isImageFile(file.name))
-      .map(file => `${galleryPath}${file.name}`);
-    if (images.length === 0) {
-      document.getElementById('thumbnailContainer').innerHTML = '<p class="text-center text-gray-600 font-serif">No images found in the frontpage folder.</p>';
-      return;
-    }
-    renderThumbnails();
-    setImage(0); // Set initial image
-  } catch (error) {
-    console.error('Error fetching images:', error);
-    document.getElementById('thumbnailContainer').innerHTML = '<p class="text-center text-gray-600 font-serif">Error loading images.</p>';
-  }
-}
+        <!-- Main Gallery Container -->
+        <div class="max-w-4xl mx-auto px-4 md:px-8 mb-10">
+          <!-- Main Image Display with black background and containment -->
+          <div
+            class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
+          >
+            <img
+              id="mainImage"
+              src="/static/frontpage/frontpage1.jpg"
+              alt="Main Gallery Image"
+              class="w-full h-full object-contain transition-all duration-500"
+            />
+            <!-- Left Arrow -->
+            <button
+              onclick="prevImage()"
+              class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
+            >
+              &#8592;
+            </button>
+            <!-- Right Arrow -->
+            <button
+              onclick="nextImage()"
+              class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
+            >
+              &#8594;
+            </button>
+          </div>
+          <!-- Thumbnails -->
+          <div
+            id="thumbnailContainer"
+            class="flex flex-wrap justify-center gap-4 mt-6"
+          >
+            <!-- Thumbnails will be dynamically populated -->
+          </div>
+        </div>
+      </section>
+      <script>
+        // Fixed array of 8 images in /static/frontpage/
+        const images = [
+          "/static/frontpage/frontpage1.jpg",
+          "/static/frontpage/frontpage2.jpg",
+          "/static/frontpage/frontpage3.jpeg",
+          "/static/frontpage/frontpage4.jpg",
+          "/static/frontpage/frontpage5.jpg",
+          "/static/frontpage/frontpage6.jpg",
+          "/static/frontpage/frontpage7.jpg",
+          "/static/frontpage/frontpage8.jpg",
+        ];
+        let currentIndex = 0;
 
-// Function to render thumbnails
-function renderThumbnails() {
-  const thumbnailContainer = document.getElementById('thumbnailContainer');
-  thumbnailContainer.innerHTML = images.map((img, index) => `
+        // Function to render thumbnails
+        function renderThumbnails() {
+          const thumbnailContainer =
+            document.getElementById("thumbnailContainer");
+          thumbnailContainer.innerHTML = images
+            .map(
+              (img, index) => `
     <img
-      src="https://raw.githubusercontent.com/${owner}/${repo}/main/${img}"
+      src="${img}"
       class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
       onclick="setImage(${index})"
       alt="Gallery Image ${index + 1}"
     />
-  `).join('');
-}
+  `
+            )
+            .join("");
+        }
 
-// Function to set main image
-function setImage(index) {
-  currentIndex = index;
-  const mainImage = document.getElementById('mainImage');
-  mainImage.src = `https://raw.githubusercontent.com/${owner}/${repo}/main/${images[index]}`;
-  mainImage.alt = `Gallery Image ${index + 1}`;
-}
+        // Function to set main image
+        function setImage(index) {
+          currentIndex = index;
+          const mainImage = document.getElementById("mainImage");
+          mainImage.src = images[index];
+          mainImage.alt = `Gallery Image ${index + 1}`;
+        }
 
-// Function to show previous image
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  setImage(currentIndex);
-}
+        // Function to show previous image
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          setImage(currentIndex);
+        }
 
-// Function to show next image
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  setImage(currentIndex);
-}
+        // Function to show next image
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          setImage(currentIndex);
+        }
 
-// Text rotation functionality
-const texts = document.querySelectorAll("#text-rotator .rotating-text");
-let current = 0;
+        // Initialize gallery
+        function initGallery() {
+          renderThumbnails();
+          setImage(0); // Ensure first image is set
+        }
 
-setInterval(() => {
-  texts[current].classList.remove("opacity-100");
-  texts[current].classList.add("opacity-0");
-  current = (current + 1) % texts.length;
-  texts[current].classList.remove("opacity-0");
-  texts[current].classList.add("opacity-100");
-}, 5000);
+        // Text rotation functionality
+        const texts = document.querySelectorAll("#text-rotator .rotating-text");
+        let current = 0;
 
-// Course box expand functionality
-const boxes = document.querySelectorAll(".course-box");
-const overlay = document.getElementById("overlay");
-let activeBox = null;
+        setInterval(() => {
+          texts[current].classList.remove("opacity-100");
+          texts[current].classList.add("opacity-0");
+          current = (current + 1) % texts.length;
+          texts[current].classList.remove("opacity-0");
+          texts[current].classList.add("opacity-100");
+        }, 5000);
 
-boxes.forEach((box) => {
-  box.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (activeBox && activeBox === box) {
-      box.classList.remove("expanded");
-      overlay.classList.remove("active");
-      activeBox = null;
-    } else {
-      boxes.forEach((b) => b.classList.remove("expanded"));
-      box.classList.add("expanded");
-      overlay.classList.add("active");
-      activeBox = box;
-    }
-  });
-});
+        // Course box expand functionality
+        const boxes = document.querySelectorAll(".course-box");
+        const overlay = document.getElementById("overlay");
+        let activeBox = null;
 
-document.addEventListener("click", () => {
-  if (activeBox) {
-    activeBox.classList.remove("expanded");
-    overlay.classList.remove("active");
-    activeBox = null;
-  }
-});
+        boxes.forEach((box) => {
+          box.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (activeBox && activeBox === box) {
+              box.classList.remove("expanded");
+              overlay.classList.remove("active");
+              activeBox = null;
+            } else {
+              boxes.forEach((b) => b.classList.remove("expanded"));
+              box.classList.add("expanded");
+              overlay.classList.add("active");
+              activeBox = box;
+            }
+          });
+        });
 
+        document.addEventListener("click", () => {
+          if (activeBox) {
+            activeBox.classList.remove("expanded");
+            overlay.classList.remove("active");
+            activeBox = null;
+          }
+        });
 
+        function toggleMusic() {
+          if (isPlaying) {
+            music.pause();
+            musicIcon.src = "/static/volume-no.png";
+          } else {
+            music
+              .play()
+              .catch((err) => console.log("Audio playback failed:", err));
+            musicIcon.src = "/static/volume-up.png";
+          }
+          isPlaying = !isPlaying;
+        }
 
+        document
+          .getElementById("music-toggle")
+          .addEventListener("click", toggleMusic);
 
-</script>
+        // Auto-play music and initialize gallery on load
+        window.addEventListener("load", () => {
+          music
+            .play()
+            .then(() => {
+              isPlaying = true;
+            })
+            .catch((err) => {
+              console.log("Auto-play blocked:", err);
+            });
+          initGallery();
+          AOS.init(); // Initialize AOS
+        });
+      </script>
     </div>
 
     <!--youtube-->
@@ -1074,7 +1087,6 @@ document.addEventListener("click", () => {
       </div>
     </section>
 
-
     <script
       src="https://static.elfsight.com/platform/platform.js"
       async
@@ -1169,6 +1181,9 @@ document.addEventListener("click", () => {
     <script src="index.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
       // Music Cursor
       const musicCursor = document.getElementById("music-cursor");
       document.addEventListener("mousemove", (e) => {
@@ -1176,149 +1191,25 @@ document.addEventListener("click", () => {
         musicCursor.style.top = `${e.clientY + 25}px`;
         musicCursor.style.opacity = 1;
       });
-    </script>
-
-    <!-- Load config.js -->
-    <script src="config.js"></script>
-    <!-- JavaScript to fetch and render videos -->
-    <!-- <script>
-    const BASE_URL = 'https://www.googleapis.com/youtube/v3';
-
-    async function getUploadsPlaylistId() {
-      const response = await fetch(`${BASE_URL}/channels?part=contentDetails&id=${CONFIG.CHANNEL_ID}&key=${CONFIG.YOUTUBE_API_KEY}`);
-      const data = await response.json();
-      if (data.items && data.items.length > 0) {
-        return data.items[0].contentDetails.relatedPlaylists.uploads;
-      }
-      throw new Error('Unable to fetch uploads playlist ID');
-    }
-
-    async function getVideosFromPlaylist(playlistId, maxResults = 10) {
-      const videos = [];
-      let nextPageToken = '';
-      while (videos.length < maxResults) {
-        const response = await fetch(
-          `${BASE_URL}/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&maxResults=${Math.min(50, maxResults - videos.length)}&pageToken=${nextPageToken}&key=${CONFIG.YOUTUBE_API_KEY}`
-        );
-        const data = await response.json();
-        const videoIds = data.items.map(item => item.contentDetails.videoId);
-        
-        if (videoIds.length > 0) {
-          const videoResponse = await fetch(
-            `${BASE_URL}/videos?part=snippet,contentDetails,statistics&id=${videoIds.join(',')}&key=${CONFIG.YOUTUBE_API_KEY}`
-          );
-          const videoData = await videoResponse.json();
-          
-          videoData.items.forEach(item => {
-            const duration = parseDuration(item.contentDetails.duration);
-            videos.push({
-              videoId: item.id,
-              title: item.snippet.title,
-              publishedAt: item.snippet.publishedAt,
-              duration: item.contentDetails.duration,
-              durationSeconds: duration,
-              isShort: duration <= 60,
-              viewCount: item.statistics.viewCount || '0'
-            });
-          });
-        }
-        
-        nextPageToken = data.nextPageToken || '';
-        if (!nextPageToken) break;
-      }
-      return videos.slice(0, maxResults);
-    }
-
-    function parseDuration(duration) {
-      const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-      const hours = parseInt(match[1]) || 0;
-      const minutes = parseInt(match[2]) || 0;
-      const seconds = parseInt(match[3]) || 0;
-      return hours * 3600 + minutes * 60 + seconds;
-    }
-
-    function renderVideos(videos) {
-      const classVideosContainer = document.getElementById('class-videos-container');
-      const shortsContainer = document.getElementById('shorts-container');
-      
-      const classVideos = videos.filter(video => !video.isShort);
-      const shorts = videos.filter(video => video.isShort);
-      
-      const classVideoHtml = classVideos.map((video, index) => `
-        <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="${video.title}">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&controls=1" title="TablaGyan Class Video: ${video.title}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${formatDuration(video.duration)}</span>
-        </div>
-      `).join('');
-      
-      classVideosContainer.innerHTML = classVideoHtml + classVideoHtml; // Duplicate for infinite scroll
-      
-      const shortsHtml = shorts.map((video, index) => `
-        <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-${(index % 3) + 1}" data-title="${video.title}">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${formatDuration(video.duration)}</span>
-        </div>
-      `).join('');
-      
-      shortsContainer.innerHTML = shortsHtml;
-    }
-
-    function formatDuration(duration) {
-      const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-      const hours = parseInt(match[1]) || 0;
-      const minutes = parseInt(match[2]) || 0;
-      const seconds = parseInt(match[3]) || 0;
-      if (hours > 0) return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    }
-
-    async function main() {
-      if (!CONFIG.YOUTUBE_API_KEY || CONFIG.YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE') {
-        console.error('Please provide a valid YouTube API key in config.js');
-        document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Please configure your YouTube API key.</p>';
-        document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Please configure your YouTube API key.</p>';
-        return;
-      }
-      
-      try {
-        const playlistId = await getUploadsPlaylistId();
-        const videos = await getVideosFromPlaylist(playlistId, 10);
-        renderVideos(videos);
-      } catch (error) {
-        console.error('Error fetching videos:', error);
-        document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Error loading videos. Please try again later.</p>';
-        document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Error loading Shorts. Please try again later.</p>';
-      }
-    }
-
-    // Check if CONFIG is defined and run main
-    if (typeof CONFIG !== 'undefined') {
-      main();
-    } else {
-      console.error('config.js not loaded or CONFIG not defined');
-      document.getElementById('class-videos-container').innerHTML = '<p class="text-red-500 text-center">Configuration file missing. Please create config.js.</p>';
-      document.getElementById('shorts-container').innerHTML = '<p class="text-red-500 text-center">Configuration file missing. Please create config.js.</p>';
-    }
-  </script> -->
-    <script>
-      const music = document.getElementById("background-music");
+      // Music Toggle
+      const musicToggle = document.getElementById("music-toggle");
+      const backgroundMusic = document.getElementById("background-music");
       const musicIcon = document.getElementById("music-icon");
-      let isPlaying = false;
-
-      function toggleMusic() {
-        if (isPlaying) {
-          music.pause();
-          musicIcon.src = "/static/volume-no.png"; // Change icon to 'off'
-        } else {
-          music.play();
-          musicIcon.src = "/static/volume-up.png"; // Change icon to 'on'
+      musicToggle.addEventListener("click", () => {
+        try {
+          if (backgroundMusic.paused) {
+            backgroundMusic
+              .play()
+              .catch((e) => console.warn("Audio playback failed:", e));
+            musicIcon.src = "/static/volume-up.png";
+          } else {
+            backgroundMusic.pause();
+            musicIcon.src = "/static/volume-no.png";
+          }
+        } catch (e) {
+          console.warn("Music toggle failed:", e);
         }
-        isPlaying = !isPlaying;
-      }
-
-      document
-        .getElementById("music-toggle")
-        .addEventListener("click", toggleMusic);
+      });
     </script>
   </body>
 </html>
