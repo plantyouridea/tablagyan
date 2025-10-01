@@ -45,7 +45,11 @@
     />
 
     <link rel="stylesheet" href="static/css/index.css" />
-
+    <script>
+      if (window.location.hostname === 'tablagyan.com') {
+        window.location.replace('https://www.tablagyan.com' + window.location.pathname);
+      }
+    </script>
     <style>
       .playfair-display {
         font-family: "Playfair Display", serif;
