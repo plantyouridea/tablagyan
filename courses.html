@@ -84,24 +84,37 @@
         transform: translateY(-4px);
       }
       .course-image {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
 
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
       .swiper-button-next,
       .swiper-button-prev {
-        color: #800000;
-        background: rgba(255, 255, 255, 0.8);
+        color: #7b1e1e; /* Arrow Color (Maroon) */
+        background: #ffffff; /* Circle Color (White) */
+        border: 2px solid #c69b58; /* Gold Border */
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 48px; /* Slightly larger for better look */
+        height: 48px;
+        transition: all 0.3s ease; /* Smooth hover animation */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
       }
+
       .swiper-button-next:after,
       .swiper-button-prev:after {
         font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Hover State */
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: #7b1e1e; /* Circle becomes Maroon */
+        color: #ffffff; /* Arrow becomes White */
+        border-color: #7b1e1e;
       }
       .swiper-wrapper {
         scrollbar-width: none;
@@ -189,11 +202,6 @@
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Contact</a
         >
-        <a
-          href="faq.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >FAQ</a
-        >
       </div>
       <!-- Mobile Menu Toggle (Checkbox) -->
       <input type="checkbox" id="menu-toggle" class="hidden" />
@@ -231,7 +239,6 @@
           <a href="gallery.html">Gallery</a>
           <a href="courses.html">Courses</a>
           <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
@@ -253,476 +260,805 @@
           class="w-8 h-8"
         />
       </div>
+
       <!-- Courses Section -->
-      <section class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-12 text-center text-[#7b1e1e]"
-          style="font-family: 'Cinzel', serif"
-          data-aos="fade-up"
-        >
-          Our Courses
-        </h2>
-        <div class="max-w-5xl mx-auto">
-          <!-- Tabla Courses -->
-          <h3
-            class="text-2xl md:text-3xl font-semibold mb-8 text-[#800000]"
-            style="font-family: 'Libre Baskerville', serif"
-            data-aos="fade-up"
-            data-aos-delay="100"
+
+      <section
+        class="py-16 bg-[#FFF8F0] text-[#5a4a42] px-4 md:px-16"
+        id="courses"
+      >
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold tracking-[0.25em] text-[#c69b58] uppercase mb-3"
           >
-            Tabla Courses
+            Academic Curriculum
+          </h2>
+          <h3
+            class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
+            style="font-family: 'Cinzel', serif"
+          >
+            Our Courses
           </h3>
+          <div class="w-24 h-1 bg-[#c69b58] mx-auto mt-6"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="flex items-center gap-4 mb-8 px-1" data-aos="fade-right">
+            <div class="h-8 w-1 bg-[#c69b58]"></div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-[#7b1e1e]"
+              style="font-family: 'Cinzel', serif"
+            >
+              Tabla Courses
+            </h3>
+          </div>
+
           <div class="carousel" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <!-- Beginner Tabla -->
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/beginner-tabla.jpg"
                       alt="Beginner Tabla Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
                       Beginner Tabla
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
                       Learn the History, Importance, Fundamentals of Tabla
                       playing, Basics of Rhythm, Fingering techniques to create
                       different sounds, foundational Bols (syllables) to build a
-                      strong base on Vocabulary of Tabla in Music.
+                      strong base.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: Typically 4-5 months</li>
-                      <li>
-                        Focus: Finger technique, Recitation, Basic Rhythms,
-                        Vocabulary, simple compositions
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 4-5
+                        months
                       </li>
-                      <li>
-                        Suitable for: Beginners with Little or No experience in
-                        music
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Finger
+                        technique, Recitation, Basic Rhythms
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Beginners
+                        with little/no experience
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
-                <!-- Intermediate Level-1 Tabla -->
+
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/intermediate1-tabla.jpg"
                       alt="Intermediate Level-1 Tabla Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
-                      Intermediate Level-1 Tabla
+                      Intermediate Level-1
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      Build on your foundational skills & Apply them to graduate
-                      & become a successful accompanist. Start becoming
-                      conversant with foot tapping beats enriched with melody
-                      and speed, by using the Rhythmic Patterns and Variations
-                      creatively. (Stage performance opportunity will be given)
+                      Build on foundational skills & become a successful
+                      accompanist. Start conversing with foot-tapping beats
+                      enriched with melody and speed using Rhythmic Patterns.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: Typically 1.5 – 2.0 years</li>
-                      <li>
-                        Focus: Basic Taals, Variations, Multi-genre Song
-                        accompaniment skills (Bhajans, Bollywood, Ghazal, Tabla
-                        Covers, etc)
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 1.5 –
+                        2.0 years
                       </li>
-                      <li>
-                        Suitable for: Learners who have completed the Beginners
-                        course
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Basic
+                        Taals, Variations, Multi-genre Accompaniment
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Graduates
+                        of Beginner course
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
-                <!-- Intermediate Level-2 Tabla -->
+
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/intermediate2-tabla.jpg"
                       alt="Intermediate Level-2 Tabla Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
-                      Intermediate Level-2 Tabla
+                      Intermediate Level-2
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      Start shaping up into a performer by embarking on a
-                      journey of advanced Taals. Extensive training in Gharana
-                      based classical compositions till you master them to
-                      achieve fluidity in Tabla Vocabulary and Practice. (Stage
-                      performance opportunity will be given)
+                      Shape up into a performer. Extensive training in
+                      Gharana-based classical compositions to achieve fluidity
+                      in Tabla Vocabulary and Practice.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: Typically 2 – 4 years</li>
-                      <li>
-                        Focus: Advanced Taals, Fixed long & Short compositions,
-                        Mastery of Tabla Gharana based repertoire, Basic
-                        Classical accompaniment
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 2 – 4
+                        years
                       </li>
-                      <li>
-                        Suitable for: Learners who have completed the
-                        Intermediate-1 course
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Advanced
+                        Taals, Gharana Repertoire
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Graduates
+                        of Intermediate-1
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
-                <!-- Advanced Tabla -->
+
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/advanced-tabla.jpg"
                       alt="Advanced Tabla Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
                       Advanced Tabla
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      Master the art of Tabla..! Only for learners who are
-                      passionate about Tabla. Be ready for a lifelong
-                      association with Music where you engage in learning
-                      advanced techniques, Concert level accompaniment skills,
-                      Independent Tabla Solo performance skills and more…
+                      Master the art of Tabla! For passionate learners ready for
+                      a lifelong association. Engage in advanced techniques,
+                      Concert accompaniment, and Solo performance.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: 5+ years to endless learning..!</li>
-                      <li>
-                        Focus: Advanced Techniques, Advanced accompaniment
-                        skills, Mastery in creative / on-the-fly compositions,
-                        concert performance level preparation
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 5+
+                        years
                       </li>
-                      <li>
-                        Suitable for: Learners who have completed the
-                        Intermediate-2 course
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Advanced
+                        Techniques, Solo Performance
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Graduates
+                        of Intermediate-2
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div
+                class="swiper-button-prev !text-[#5a4a42] !hover:text-[#c69b58]"
+              ></div>
+              <div
+                class="swiper-button-next !text-[#5a4a42] !hover:text-[#c69b58]"
+              ></div>
             </div>
           </div>
-          <!-- Vocal Courses -->
-          <h3
-            class="text-2xl md:text-3xl font-semibold mb-8 text-[#800000]"
-            style="font-family: 'Libre Baskerville', serif"
-            data-aos="fade-up"
-            data-aos-delay="300"
+
+          <div
+            class="flex items-center gap-4 mb-8 mt-16 px-1"
+            data-aos="fade-right"
           >
-            Vocal Courses
-          </h3>
+            <div class="h-8 w-1 bg-[#c69b58]"></div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-[#7b1e1e]"
+              style="font-family: 'Cinzel', serif"
+            >
+              Vocal Courses
+            </h3>
+          </div>
+
           <div class="carousel" data-aos="fade-up" data-aos-delay="400">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <!-- Beginner Vocal -->
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/beginner-vocal.jpg"
                       alt="Beginner Vocal Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
                       Beginner Vocal
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      Start your Music journey with foundational training in the
-                      basic swaras, alankars etc to build a strong based and
-                      prepare your vocal chords for a melodious journey..!
+                      Start your Music journey with foundational training in
+                      basic swaras and alankars to build a strong base and
+                      prepare your vocal chords for a melodious journey.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: Typically 3-4 months</li>
-                      <li>
-                        Focus: Voice modulation, Swaras, Alankaars, Basic Ragas
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 3-4
+                        months
                       </li>
-                      <li>
-                        Suitable for: Beginners with Little or No experience in
-                        music
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Voice
+                        modulation, Swaras, Alankaars
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Beginners
+                        with little/no experience
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
-                <!-- Intermediate Vocal -->
+
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/intermediate-vocal.jpg"
                       alt="Intermediate Vocal Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
                       Intermediate Vocal
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
                       Deepen your skills with additional Ragas by exploring
                       expressive singing techniques for classical and
-                      semi-classical singing styles. (Stage performance
-                      opportunity will be given)
+                      semi-classical singing styles.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: Typically 1 – 1.5 years</li>
-                      <li>
-                        Focus: More Ragas, Bandishes, introduction to Alap
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 1 –
+                        1.5 years
                       </li>
-                      <li>
-                        Suitable for: Learners who have completed the Beginners
-                        course
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> More
+                        Ragas, Bandishes, Alap
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Graduates
+                        of Beginner course
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
-                <!-- Advanced Vocal -->
+
                 <div class="swiper-slide">
-                  <div class="course-card p-6">
+                  <div
+                    class="course-card p-6 bg-white border border-[#c69b58]/30 rounded-lg shadow-md h-full flex flex-col"
+                  >
                     <img
                       src="/static/courses/advanced-vocal.jpg"
                       alt="Advanced Vocal Course"
-                      class="course-image"
+                      class="course-image rounded-md mb-5 border-b-2 border-[#c69b58]"
                     />
                     <h4
-                      class="text-xl font-semibold mb-4"
+                      class="text-xl font-bold mb-3 text-[#7b1e1e]"
                       style="font-family: 'Libre Baskerville', serif"
                     >
                       Advanced Vocal
                     </h4>
                     <p
-                      class="text-gray-700 mb-4 leading-relaxed"
+                      class="text-[#5a4a42] mb-4 leading-relaxed text-sm md:text-base"
                       style="font-family: 'Hubballi', sans-serif"
                     >
                       Prepare for professional performances with advanced vocal
-                      training, Mastery of complex Ragas. (Stage performance
-                      opportunity will be given)
+                      training and Mastery of complex Ragas.
                     </p>
                     <ul
-                      class="list-disc list-inside mb-4 text-gray-700"
+                      class="list-disc list-inside mb-6 text-[#5a4a42] text-sm md:text-base flex-grow"
                       style="font-family: 'Hubballi', sans-serif"
                     >
-                      <li>Duration: 5+ years to endless learning..!</li>
-                      <li>
-                        Focus: Mastery in creativity, Gharana based repertoire,
-                        complex Ragas, Bandishes
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Duration:</strong> 5+
+                        years
                       </li>
-                      <li>
-                        Suitable for: Learners who have completed the
-                        Intermediate course
+                      <li class="marker:text-[#c69b58] mb-1">
+                        <strong class="text-[#7b1e1e]">Focus:</strong> Mastery
+                        in creativity, Gharana Repertoire
+                      </li>
+                      <li class="marker:text-[#c69b58]">
+                        <strong class="text-[#7b1e1e]">For:</strong> Graduates
+                        of Intermediate course
                       </li>
                     </ul>
                     <a
                       href="contact.html"
-                      class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-                      style="font-family: 'Libre Baskerville', serif"
+                      class="inline-block w-full py-3 text-center bg-[#7b1e1e] text-white font-bold text-xs uppercase tracking-[0.15em] rounded hover:bg-[#c69b58] hover:text-[#7b1e1e] transition-all duration-300"
+                      style="font-family: 'Cinzel', serif"
                       >Enroll Now</a
                     >
                   </div>
                 </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div
+                class="swiper-button-prev !text-[#5a4a42] !hover:text-[#c69b58]"
+              ></div>
+              <div
+                class="swiper-button-next !text-[#5a4a42] !hover:text-[#c69b58]"
+              ></div>
             </div>
           </div>
         </div>
       </section>
+
+      <script>
+        var swiper = new Swiper(".swiper", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+        });
+      </script>
+
       <!-- CTA Section -->
-      <section class="py-12 bg-red-50">
-        <div class="text-center max-w-3xl mx-auto px-6">
-          <h3
-            class="text-2xl md:text-3xl font-bold mb-4"
-            style="font-family: 'Cinzel', serif"
-            data-aos="fade-up"
+      <div class="relative">
+        <section
+          class="pt-20 pb-24 bg-[#7b1e1e] relative font-serif overflow-hidden border-t-4 border-[#c69b58]"
+        >
+          <div
+            class="absolute inset-0 opacity-10 pointer-events-none"
+            style="
+              background-image: radial-gradient(#c69b58 1px, transparent 1px);
+              background-size: 30px 30px;
+            "
+          ></div>
+
+          <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-10"
+            >
+              <div class="text-center md:text-left md:max-w-2xl">
+                <h3
+                  class="text-3xl md:text-4xl font-bold text-white mb-4"
+                  style="font-family: 'Cinzel', serif"
+                >
+                  Ready to Find Your <span class="text-[#c69b58]">Rhythm?</span>
+                </h3>
+                <p
+                  class="text-[#FFF8F0]/80 text-lg leading-relaxed font-light"
+                  style="font-family: 'Hubballi', sans-serif"
+                >
+                  Join our legacy of tradition and excellence. Let rhythm and
+                  melody transform your life today.
+                </p>
+              </div>
+
+              <div class="flex-shrink-0">
+                <a
+                  href="contact.html"
+                  class="group relative inline-flex items-center justify-center px-10 py-4 bg-[#c69b58] text-[#7b1e1e] font-bold text-sm tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_rgba(198,155,88,0.6)]"
+                >
+                  <span class="relative flex items-center">
+                    Enroll Now
+                    <svg
+                      class="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="relative z-30">
+          <div class="h-2 w-full bg-[#c69b58]"></div>
+
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           >
-            Ready to Start Your Musical Journey?
-          </h3>
-          <p
-            class="mb-6 text-gray-700"
-            style="font-family: 'Hubballi', sans-serif"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Whether you're a beginner or an advanced musician, TablaGyan offers
-            courses tailored to your needs. Join our community and let rhythm
-            and melody transform your life.
-          </p>
-          <a
-            href="contact.html"
-            class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
-            style="font-family: 'Libre Baskerville', serif"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Contact Us to Enroll
-          </a>
+            <div class="relative z-30">
+              <div class="h-2 w-full bg-[#c69b58]"></div>
+
+              <div
+                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <div class="relative z-30">
+                  <div class="h-2 w-full bg-[#c69b58]"></div>
+
+                  <div
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <div class="relative z-30">
+                      <div class="h-2 w-full bg-[#c69b58]"></div>
+
+                      <div
+                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                      >
+                        <div
+                          class="w-20 h-20 bg-[#c69b58] rounded-full flex items-center justify-center shadow-xl ring-4 ring-[#fcf0dc]"
+                        >
+                          <img
+                            src="/static/images/tabla.png"
+                            alt="Tabla drums icon"
+                            class="w-12 h-12 object-contain"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+
+        <footer
+          class="bg-[#fcf0dc] text-[#4b2e2e] pt-16 pb-10 font-serif relative border-t-4 border-[#c69b58]"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+            style="
+              background-image: radial-gradient(#7b1e1e 1px, transparent 1px);
+              background-size: 20px 20px;
+            "
+          ></div>
+
+          <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-[43%_27%_30%] gap-8 mb-12 border-b border-[#7b1e1e]/10 pb-12"
+            >
+              <div class="space-y-6 pr-0 lg:pr-16">
+                <div class="flex items-center gap-3">
+                  <h2
+                    class="text-3xl font-bold text-[#7b1e1e]"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    Tabla<span class="text-[#c69b58]">Gyan</span>
+                  </h2>
+                </div>
+
+                <p
+                  class="text-sm leading-relaxed text-[#5a4a42]"
+                  style="font-family: 'Hubballi', sans-serif"
+                >
+                  A sanctuary for rhythm seekers. Preserving the ancient
+                  tradition of Indian Classical Music while inspiring the next
+                  generation of artists.
+                </p>
+
+                <div class="flex space-x-4 pt-2">
+                  <a
+                    href="https://instagram.com/tablagyan.official"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:from-[#7b1e1e] hover:via-[#7b1e1e] hover:to-[#7b1e1e] shadow-md hover:shadow-none"
+                  >
+                    <svg
+                      class="w-5 h-5 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://youtube.com/@tablagyanacademyofmusic"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#FF0000] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                  >
+                    <svg
+                      class="w-5 h-5 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                      viewBox="0 0 576 512"
+                    >
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://facebook.com/tabla.gyan"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#1877F2] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                  >
+                    <svg
+                      class="w-5 h-5 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://wa.me/919845395205"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#25D366] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                  >
+                    <svg
+                      class="w-5 h-5 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="lg:pl-8">
+                <h3
+                  class="text-sm font-bold text-[#7b1e1e] uppercase tracking-widest mb-6 border-b border-[#c69b58] pb-2 inline-block"
+                >
+                  Explore
+                </h3>
+                <ul class="space-y-3 text-sm font-medium text-[#5a4a42]">
+                  <li>
+                    <a
+                      href="about.html"
+                      class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                      ><span
+                        class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                      ></span>
+                      About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="courses.html"
+                      class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                      ><span
+                        class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                      ></span>
+                      Courses</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="about.html#gurus"
+                      class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                      ><span
+                        class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                      ></span>
+                      Our Guru</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="gallery.html"
+                      class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                      ><span
+                        class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                      ></span>
+                      Gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="contact.html"
+                      class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                      ><span
+                        class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                      ></span>
+                      Enrollment</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3
+                  class="text-sm font-bold text-[#7b1e1e] uppercase tracking-widest mb-6 border-b border-[#c69b58] pb-2 inline-block"
+                >
+                  Visit Us
+                </h3>
+                <ul class="space-y-4 text-sm font-medium text-[#5a4a42]">
+                  <li class="flex items-start group">
+                    <div
+                      class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 mt-1 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span
+                      >1234 Music Lane, Bengaluru,<br />Karnataka 560034,
+                      India</span
+                    >
+                  </li>
+                  <li class="flex items-center group">
+                    <div
+                      class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>+91 98453 95205</span>
+                  </li>
+                  <li class="flex items-center group">
+                    <div
+                      class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>contact@tablagyan.com</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="text-center text-xs text-[#5a4a42]/60 flex flex-col md:flex-row justify-between items-center gap-4"
+            >
+              <p>&copy; 2025 TablaGyan Academy. All rights reserved.</p>
+              <div class="flex gap-4">
+                <a href="#" class="hover:text-[#7b1e1e]">Privacy Policy</a>
+                <span class="text-[#c69b58]">•</span>
+                <a href="#" class="hover:text-[#7b1e1e]">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
       <div class="visitor-counter">
         <img
           src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
           alt="Visitor Count"
         />
       </div>
-      <!-- Footer -->
-      <footer
-        class="bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
-      >
-        <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
-          <a
-            href="https://instagram.com/tablagyan.official"
-            target="_blank"
-            class="text-gray-600 hover:text-pink-500 transition"
-          >
-            <svg
-              class="w-5 h-5 md:w-6 md:h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://youtube.com/@tablagyanacademyofmusic"
-            target="_blank"
-            class="text-gray-600 hover:text-red-600 transition"
-          >
-            <svg
-              class="w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 576 512"
-              fill="currentColor"
-            >
-              <path
-                d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://facebook.com/tabla.gyan"
-            target="_blank"
-            class="text-gray-600 hover:text-blue-600 transition"
-          >
-            <svg
-              class="w-5 h-5 md:w-6 md:h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://wa.me/9845395205"
-            target="_blank"
-            class="text-gray-600 hover:text-green-500 transition"
-          >
-            <svg
-              class="w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 448 512"
-              fill="currentColor"
-            >
-              <path
-                d="M380.9 97.1C339 55.2 283.5 32 224.8 32c-117.4 0-212.8 95.4-212.8 212.8 0 37.5 9.8 74.1 28.5 106.3L2 480l132.9-36.5c30.8 16.8 65.6 25.6 101.9 25.6h.1c117.3 0 212.8-95.4 212.8-212.8 0-58.7-23.2-114.1-65.8-156.2zM224.8 438.7c-30.5 0-60.2-8.2-86.2-23.7l-6.2-3.7-78.7 21.6 21-76.5-4-6.5c-17.7-28.8-27.1-62.1-27.1-96.4 0-100.1 81.5-181.6 181.6-181.6 48.5 0 94 18.9 128.3 53.2s53.2 79.8 53.2 128.3c0 100.1-81.5 181.7-181.6 181.7zm101.1-138.5c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.9-2.8-12.7 2.8-3.7 5.5-14.6 18.1-17.9 21.9-3.3 3.7-6.6 4.2-12.1 1.4-33.1-16.5-54.8-29.5-76.6-66.7-5.8-10 5.8-9.3 16.5-30.9 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.7-30.6-17.4-41.9-4.6-11.1-9.3-9.6-12.7-9.8-3.3-.2-7.1-.2-10.9-.2s-10.2 1.4-15.5 6.9c-5.3 5.5-20.2 19.7-20.2 48.1s20.7 55.8 23.5 59.6c2.8 3.7 40.8 62.3 99 87.4 13.8 6 24.6 9.6 33 12.3 13.9 4.4 26.5 3.8 36.5 2.3 11.1-1.7 32.8-13.4 37.4-26.3 4.6-12.8 4.6-23.8 3.3-26.3-1.3-2.5-5-3.9-10.5-6.6z"
-              />
-            </svg>
-          </a>
-        </div>
-        <p style="font-family: 'Hubballi', sans-serif">
-          © 2025 TablaGyan. All rights reserved.
-        </p>
-      </footer>
+
       <!-- Scripts -->
       <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

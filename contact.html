@@ -64,14 +64,11 @@
     <link rel="stylesheet" href="static/css/index.css" />
   </head>
 
-
-
   <body class="bg-white text-gray-800">
-    
-
-
-      <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]">
+    <!-- Navigation Bar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
+    >
       <div class="flex items-center space-x-6">
         <img
           src="static/images/logo-dark1.png"
@@ -127,27 +124,20 @@
           </div>
         </div>
 
-
-
         <a
           href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
         <a
-        href="gallery.html"
-        class="text-[#3e2723] hover:text-[#b7410e] transition"
-        >Gallery</a
-      >
+          href="gallery.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Gallery</a
+        >
         <a
           href="contact.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Contact</a
-        >
-        <a
-          href="faq.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >FAQ</a
         >
       </div>
 
@@ -176,7 +166,7 @@
 
       <!-- Mobile Menu Dropdown -->
       <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg z-50 transition-all duration-300 max-h-0 overflow-hidden"
         id="menu-content"
       >
         <div
@@ -189,7 +179,6 @@
           <a href="gallery.html">Gallery</a>
           <a href="courses.html">Courses</a>
           <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
@@ -213,82 +202,119 @@
           class="w-8 h-8"
         />
       </div>
-      <section class="h-screen mt-20 w-full flex bg-white relative font-serif">
-        <!-- Background Image on Left -->
-        <div class="absolute inset-0 w-3/5">
+      <!--conatct form-->
+      <section
+        class="min-h-screen w-full flex flex-col lg:flex-row bg-[#FFF8F0] relative font-serif overflow-hidden pt-32 lg:pt-36"
+      >
+        <div
+          class="hidden lg:block relative w-1/2 h-auto overflow-hidden group"
+        >
           <img
             src="/static/images/tabla-professor-1.jpeg"
             alt="Professor playing tabla"
-            class="h-full w-full object-cover opacity-60"
+            class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-r via-black/60 to-transparent"
+            class="absolute inset-0 bg-gradient-to-r from-[#2a0a0a]/80 via-[#2a0a0a]/20 to-transparent"
           ></div>
+
+          <div class="absolute bottom-8 left-8 text-white/90 z-10">
+            <p class="text-xl italic font-light tracking-wider">
+              "Rhythm is the heartbeat of the soul."
+            </p>
+          </div>
         </div>
 
-        <!-- Right Side: Contact Form -->
         <div
-          class="ml-auto w-full md:w-2/5 h-full bg-[#fffaf0]/80 relative p-10 md:p-16 flex flex-col justify-center"
+          class="w-full lg:w-1/2 h-full relative flex flex-col justify-start px-6 pb-12 lg:px-20 lg:justify-center"
         >
-          <div
-            class="absolute top-0 left-0 w-full h-4 bg-repeat-x bg-[url('/static/images/deco-top.png')]"
-          ></div>
+          <div class="w-24 h-1 bg-[#c69b58] mb-8"></div>
 
           <h2
-            class="text-4xl font-bold text-[#7b1e1e] mb-10 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max"
+            class="text-4xl lg:text-5xl font-bold text-[#7b1e1e] mb-4 font-serif"
           >
-            Connect With TablaGyan
+            Begin Your Journey
           </h2>
+          <p class="text-[#5a4a42] mb-10 text-lg">
+            Connect with TablaGyan to schedule a demo or enroll in a course.
+          </p>
 
-          <!-- Contact Form -->
           <form
             id="contactForm"
             method="POST"
             action="https://docs.google.com/forms/u/0/d/1BBkh3MNF07vlEbCQAHaY_FKk-QvLoC0BvlQcmu11Y_s/formResponse"
-            class="space-y-6"
+            class="space-y-10"
           >
-            <input
-              type="text"
-              name="entry.509524468"
-              required
-              placeholder="Your Name"
-              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
-            />
-            <input
-              type="tel"
-              name="entry.1597249937"
-              required
-              placeholder="Phone Number"
-              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
-            />
-            <input
-              type="email"
-              name="entry.631368785"
-              placeholder="Email (Optional)"
-              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
-            />
-            <div class="mb-6">
-              <label class="block text-lg font-semibold text-[#7b1e1e] mb-2"
-                >Purpose</label
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="relative z-0 w-full group">
+                <input
+                  type="text"
+                  name="entry.509524468"
+                  required
+                  class="block py-2.5 px-0 w-full text-lg text-[#2a0a0a] bg-transparent border-0 border-b-2 border-[#c69b58]/50 appearance-none focus:outline-none focus:ring-0 focus:border-[#7b1e1e] peer transition-colors"
+                  placeholder=" "
+                />
+                <label
+                  class="peer-focus:font-medium absolute text-lg text-[#8c7b75] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#7b1e1e] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Your Name
+                </label>
+              </div>
+
+              <div class="relative z-0 w-full group">
+                <input
+                  type="tel"
+                  name="entry.1597249937"
+                  required
+                  class="block py-2.5 px-0 w-full text-lg text-[#2a0a0a] bg-transparent border-0 border-b-2 border-[#c69b58]/50 appearance-none focus:outline-none focus:ring-0 focus:border-[#7b1e1e] peer transition-colors"
+                  placeholder=" "
+                />
+                <label
+                  class="peer-focus:font-medium absolute text-lg text-[#8c7b75] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#7b1e1e] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Phone Number
+                </label>
+              </div>
+            </div>
+
+            <div class="relative z-0 w-full group">
+              <input
+                type="email"
+                name="entry.631368785"
+                class="block py-2.5 px-0 w-full text-lg text-[#2a0a0a] bg-transparent border-0 border-b-2 border-[#c69b58]/50 appearance-none focus:outline-none focus:ring-0 focus:border-[#7b1e1e] peer transition-colors"
+                placeholder=" "
+              />
+              <label
+                class="peer-focus:font-medium absolute text-lg text-[#8c7b75] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#7b1e1e] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-              <div id="purposeToggleGroup" class="flex flex-wrap gap-4">
+                Email Address (Optional)
+              </label>
+            </div>
+
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-[#c69b58] mb-4"
+              >
+                I am interested in
+              </label>
+              <div id="purposeToggleGroup" class="flex flex-wrap gap-3">
                 <button
                   type="button"
-                  class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
+                  class="purpose-btn px-6 py-2 rounded-full border border-[#c69b58] bg-transparent text-[#7b1e1e] hover:bg-[#7b1e1e] hover:text-white transition-all duration-300 text-sm md:text-base"
                   data-value="Enroll into Class"
                 >
                   Enroll into Class
                 </button>
                 <button
                   type="button"
-                  class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
+                  class="purpose-btn px-6 py-2 rounded-full border border-[#c69b58] bg-transparent text-[#7b1e1e] hover:bg-[#7b1e1e] hover:text-white transition-all duration-300 text-sm md:text-base"
                   data-value="Demo Class"
                 >
                   Demo Class
                 </button>
                 <button
                   type="button"
-                  class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
+                  class="purpose-btn px-6 py-2 rounded-full border border-[#c69b58] bg-transparent text-[#7b1e1e] hover:bg-[#7b1e1e] hover:text-white transition-all duration-300 text-sm md:text-base"
                   data-value="Other"
                 >
                   Other
@@ -302,255 +328,985 @@
               />
             </div>
 
-            <div id="enrollOptions" class="hidden space-y-2 mt-4 ml-2">
-              <label class="block text-lg font-semibold text-[#7b1e1e] mb-2"
-                >Select Courses</label
+            <div
+              id="enrollOptions"
+              class="hidden space-y-4 bg-white/50 p-6 rounded-xl border border-[#c69b58]/20 shadow-sm"
+            >
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-[#c69b58]"
               >
+                Select Course(s)
+              </label>
               <div class="flex flex-wrap gap-3">
                 <button
                   type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
+                  class="course-btn px-4 py-2 rounded-md border border-stone-300 text-stone-600 hover:border-[#7b1e1e] hover:text-[#7b1e1e] text-sm transition-all duration-300"
                   data-value="Table-Beginner"
                 >
                   Tabla - Beginner
                 </button>
                 <button
                   type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
+                  class="course-btn px-4 py-2 rounded-md border border-stone-300 text-stone-600 hover:border-[#7b1e1e] hover:text-[#7b1e1e] text-sm transition-all duration-300"
                   data-value="Table-Intermediate"
                 >
                   Tabla - Intermediate
                 </button>
                 <button
                   type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Tabla-Advanced"
-                >
-                  Tabla - Advanced
-                </button>
-                <button
-                  type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
+                  class="course-btn px-4 py-2 rounded-md border border-stone-300 text-stone-600 hover:border-[#7b1e1e] hover:text-[#7b1e1e] text-sm transition-all duration-300"
                   data-value="Vocals-Beginner"
                 >
                   Vocals - Beginner
-                </button>
-                <button
-                  type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Vocals-Intermediate"
-                >
-                  Vocals - Intermediate
-                </button>
-                <button
-                  type="button"
-                  class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Vocals-Advanced"
-                >
-                  Vocals - Advanced
                 </button>
               </div>
               <div id="hiddenCourseInputs"></div>
             </div>
 
-            <textarea
-              id="messageBox"
-              name="entry.775920779"
-              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner"
-              rows="4"
-              placeholder="Your Message (Optional)"
-            ></textarea>
+            <div class="relative z-0 w-full group">
+              <textarea
+                name="entry.775920779"
+                rows="2"
+                class="block py-2.5 px-0 w-full text-lg text-[#2a0a0a] bg-transparent border-0 border-b-2 border-[#c69b58]/50 appearance-none focus:outline-none focus:ring-0 focus:border-[#7b1e1e] peer transition-colors resize-none"
+                placeholder=" "
+              ></textarea>
+              <label
+                class="peer-focus:font-medium absolute text-lg text-[#8c7b75] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#7b1e1e] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Any specific request? (Optional)
+              </label>
+            </div>
 
             <button
               type="submit"
-              class="bg-[#a94438] hover:bg-[#7b1e1e] text-white text-lg font-bold px-8 py-3 rounded-xl shadow-xl transition duration-300 w-full border-2 border-[#c69b58]"
+              class="w-full md:w-auto bg-[#7b1e1e] text-white text-lg tracking-widest font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl hover:bg-[#5e1616] transform hover:-translate-y-1 transition-all duration-300"
             >
-              Submit Inquiry
+              SEND INQUIRY
             </button>
           </form>
-          <div class="absolute bottom-0 left-0 w-full h-4 bg-repeat-x"></div>
         </div>
       </section>
 
-      <!-- Social Media Icons Row (Unchanged) -->
-      <section
-        class="w-full bg-[#fcf0dc] py-12 md:py-16"
-        data-aos="fade-up"
-        data-aos-duration="800"
-      >
-        <div class="container mx-auto px-4 md:px-6">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-[#7b1e1e] text-center mb-10 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max mx-auto"
-            style="font-family: 'Cinzel', serif"
-          >
-            Connect With Us
-          </h2>
+      <script>
+        // Toggle Logic for "Purpose" Buttons
+        const purposeBtns = document.querySelectorAll(".purpose-btn");
+        const purposeInput = document.getElementById("purposeInput");
+        const enrollOptions = document.getElementById("enrollOptions");
+
+        purposeBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Reset all styling
+            purposeBtns.forEach((b) => {
+              b.classList.remove("bg-[#7b1e1e]", "text-white");
+              b.classList.add("bg-transparent", "text-[#7b1e1e]");
+            });
+
+            // Activate clicked button
+            btn.classList.remove("bg-transparent", "text-[#7b1e1e]");
+            btn.classList.add("bg-[#7b1e1e]", "text-white");
+
+            // Update Input
+            purposeInput.value = btn.getAttribute("data-value");
+
+            // Show/Hide Course options
+            if (btn.getAttribute("data-value") === "Enroll into Class") {
+              enrollOptions.classList.remove("hidden");
+            } else {
+              enrollOptions.classList.add("hidden");
+            }
+          });
+        });
+
+        // Toggle Logic for "Course" Buttons (Multi-select)
+        const courseBtns = document.querySelectorAll(".course-btn");
+        courseBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Toggle selection classes
+            btn.classList.toggle("bg-[#c69b58]");
+            btn.classList.toggle("text-white");
+            btn.classList.toggle("border-[#c69b58]");
+            btn.classList.toggle("text-stone-600"); // Remove gray text
+          });
+        });
+      </script>
+
+      <!--socials,map and faq-->
+      <div>
+        <!--socials n map-->
+        <section
+          class="w-full bg-[#FFF8F0] pt-24 pb-0 relative overflow-hidden font-serif"
+        >
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center"
+            class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#c69b58]/40 to-transparent"
+          ></div>
+          <div
+            class="absolute -right-20 top-40 w-96 h-96 bg-[#c69b58]/5 rounded-full blur-3xl pointer-events-none"
+          ></div>
+
+          <div
+            class="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center"
           >
-            <a
-              href="https://www.instagram.com/tablagyan.official"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-white border-l-[8px] border-[#e55e45] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
-              data-aos="zoom-in"
+            <!--socials start-->
+            <div class="w-full max-w-5xl mx-auto mb-24" data-aos="fade-up">
+              <div class="text-center mb-12">
+                <h2
+                  class="text-3xl font-serif font-bold text-[#2a0a0a] tracking-widest uppercase mb-3"
+                >
+                  Engage with us
+                </h2>
+                <div class="w-16 h-1 bg-[#c69b58] mx-auto mb-4"></div>
+                <p class="text-[#5a4a42] italic">
+                  Click below to visit our official channels
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a
+                  href="https://www.instagram.com/tablagyan.official"
+                  target="_blank"
+                  class="group flex items-center justify-between bg-white border border-[#c69b58]/30 p-6 rounded-xl hover:border-transparent hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"
+                  ></div>
+                  <div class="flex items-center gap-5 relative z-10">
+                    <div
+                      class="w-14 h-14 flex items-center justify-center bg-[#FFF8F0] rounded-full text-[#7b1e1e] group-hover:bg-white/10 group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-7 h-7"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="text-xs font-bold uppercase tracking-widest text-[#c69b58] group-hover:text-white/80"
+                        >Follow</span
+                      >
+                      <span
+                        class="text-lg font-serif font-semibold text-[#2a0a0a] group-hover:text-white"
+                        >@tablagyan.official</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="relative z-10 text-[#c69b58] group-hover:text-white group-hover:translate-x-1 transition-all"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+
+                <a
+                  href="https://youtube.com/@tablagyanacademyofmusic"
+                  target="_blank"
+                  class="group flex items-center justify-between bg-white border border-[#c69b58]/30 p-6 rounded-xl hover:border-transparent hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-[#FF0000] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"
+                  ></div>
+                  <div class="flex items-center gap-5 relative z-10">
+                    <div
+                      class="w-14 h-14 flex items-center justify-center bg-[#FFF8F0] rounded-full text-[#7b1e1e] group-hover:bg-white/10 group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-7 h-7"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.43.029 5.804 0 12c-.029 6.185.458 8.566 4.385 8.816 3.599.245 11.626.245 15.23 0C23.511 20.57 23.971 18.196 24 12c.029-6.185-.458-8.566-4.385-8.816zm-10.615 12.816v-7.632l6 3.816-6 3.816z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="text-xs font-bold uppercase tracking-widest text-[#c69b58] group-hover:text-white/80"
+                        >Subscribe</span
+                      >
+                      <span
+                        class="text-lg font-serif font-semibold text-[#2a0a0a] group-hover:text-white"
+                        >TablaGyan Academy</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="relative z-10 text-[#c69b58] group-hover:text-white group-hover:translate-x-1 transition-all"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/tabla.gyan"
+                  target="_blank"
+                  class="group flex items-center justify-between bg-white border border-[#c69b58]/30 p-6 rounded-xl hover:border-transparent hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-[#1877F2] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"
+                  ></div>
+                  <div class="flex items-center gap-5 relative z-10">
+                    <div
+                      class="w-14 h-14 flex items-center justify-center bg-[#FFF8F0] rounded-full text-[#7b1e1e] group-hover:bg-white/10 group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-7 h-7"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 0C5.373 0 0 5.373 0 12c0 5.989 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.297c0-3.008 1.792-4.669 4.532-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.311h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.989 24 12 24 5.373 18.627 0 12 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="text-xs font-bold uppercase tracking-widest text-[#c69b58] group-hover:text-white/80"
+                        >Like Page</span
+                      >
+                      <span
+                        class="text-lg font-serif font-semibold text-[#2a0a0a] group-hover:text-white"
+                        >TablaGyan Academy</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="relative z-10 text-[#c69b58] group-hover:text-white group-hover:translate-x-1 transition-all"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/+919845395205"
+                  target="_blank"
+                  class="group flex items-center justify-between bg-white border border-[#c69b58]/30 p-6 rounded-xl hover:border-transparent hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-[#25D366] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"
+                  ></div>
+                  <div class="flex items-center gap-5 relative z-10">
+                    <div
+                      class="w-14 h-14 flex items-center justify-center bg-[#FFF8F0] rounded-full text-[#7b1e1e] group-hover:bg-white/10 group-hover:text-white transition-colors"
+                    >
+                      <svg
+                        class="w-7 h-7"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.004 2c-5.514 0-10.004 4.49-10.004 10.004 0 1.879.518 3.642 1.422 5.175l-1.422 5.195 5.336-1.4a9.956 9.956 0 0 0 4.668 1.165c5.514 0 10.004-4.49 10.004-10.004s-4.49-10.004-10.004-10.004zm0 18.165c-1.526 0-2.987-.409-4.275-1.117l-.306-.176-3.176.833.848-3.096-.199-.317a8.12 8.12 0 0 1-1.251-4.287c0-4.501 3.663-8.164 8.164-8.164s8.164 3.663 8.164 8.164-3.664 8.16-8.169 8.16z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="text-xs font-bold uppercase tracking-widest text-[#c69b58] group-hover:text-white/80"
+                        >Chat Now</span
+                      >
+                      <span
+                        class="text-lg font-serif font-semibold text-[#2a0a0a] group-hover:text-white"
+                        >+91 98453 95205</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="relative z-10 text-[#c69b58] group-hover:text-white group-hover:translate-x-1 transition-all"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!--SOCIALS END-->
+
+            <!--MAP START-->
+            <div
+              class="w-full max-w-5xl flex flex-col lg:flex-row bg-white shadow-xl shadow-[#2a0a0a]/5 rounded-xl overflow-hidden relative z-20"
+              data-aos="fade-up"
               data-aos-delay="100"
             >
-              <svg
-                class="w-10 h-10 mx-auto mb-3 text-[#e55e45] group-hover:text-[#c13584] transition-colors"
-                fill="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                class="w-full lg:w-1/3 p-10 flex flex-col justify-center bg-white border-b lg:border-b-0 lg:border-r border-[#c69b58]/20 relative min-h-[350px]"
               >
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.227-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 3.95.216 2.056 1.717 1.911 4.821.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.144 3.102 1.645 4.996 4.749 5.141 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c3.104-.145 4.996-1.639 5.141-4.749.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.145-3.104-1.639-4.996-4.749-5.141-1.28-.058-1.689-.072-4.948-.072z"
-                />
-                <path
-                  d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8z"
-                />
-                <circle cx="18.406" cy="5.594" r="1.44" />
-              </svg>
-              <p
-                class="font-semibold text-[#4b2e2e] text-lg"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Instagram
-              </p>
-              <p class="text-[#4b2e2e]">@tabla_gyan</p>
-            </a>
-            <a
-              href="https://youtube.com/@tablagyanacademyofmusic"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-white border-l-[8px] border-[#c4302b] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <svg
-                class="w-10 h-10 mx-auto mb-3 text-[#c4302b] group-hover:text-[#ff0000] transition-colors"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.43.029 5.804 0 12c-.029 6.185.458 8.566 4.385 8.816 3.599.245 11.626.245 15.23 0C23.511 20.57 23.971 18.196 24 12c.029-6.185-.458-8.566-4.385-8.816zm-10.615 12.816v-7.632l6 3.816-6 3.816z"
-                />
-              </svg>
-              <p
-                class="font-semibold text-[#4b2e2e] text-lg"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                YouTube
-              </p>
-              <p class="text-[#4b2e2e]">TablaGyan Channel</p>
-            </a>
-            <a
-              href="https://www.facebook.com/tabla.gyan"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-white border-l-[8px] border-[#3b5998] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <svg
-                class="w-10 h-10 mx-auto mb-3 text-[#3b5998] group-hover:text-[#1877f2] transition-colors"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 5.989 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.297c0-3.008 1.792-4.669 4.532-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.311h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.989 24 12 24 5.373 18.627 0 12 0z"
-                />
-              </svg>
-              <p
-                class="font-semibold text-[#4b2e2e] text-lg"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                Facebook
-              </p>
-              <p class="text-[#4b2e2e]">TablaGyan Academy</p>
-            </a>
-            <a
-              href="https://wa.me/+919845395205"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-white border-l-[8px] border-[#25d366] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="400"
-            >
-              <svg
-                class="w-10 h-10 mx-auto mb-3 text-[#25d366] group-hover:text-[#128c7e] transition-colors"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.134 1.527 5.873L0 24l6.305-1.653A11.842 11.842 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.257 17.076c-.277.777-.853 1.399-1.672 1.781-.747.348-1.727.524-2.769.308-1.105-.229-2.104-.757-3.505-1.999-2.933-2.598-4.803-5.792-5.3-6.379-.496-.586-.762-1.278-.762-2.015 0-.745.392-1.114.697-1.441.305-.326.678-.496 1.121-.496.136 0 .272.013.408.04.408.081.932.349 1.067.664.136.315.305.787.441 1.102.163.378.299.805.095 1.183-.204.378-.612.805-1.067 1.183-.068.054-.136.108-.204.175.408 1.532 1.61 2.769 2.933 3.505.408.229.884.434 1.359.612.408.149.884.068 1.223-.108.34-.176.612-.405.884-.663.272-.258.544-.54.816-.54.272 0 .476.108.612.297.136.189.612.932.816 1.262.204.33.272.663.204.932z"
-                />
-              </svg>
-              <p
-                class="font-semibold text-[#4b2e2e] text-lg"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                WhatsApp
-              </p>
-              <p class="text-[#4b2e2e]">+91-XXXX-XXXXXX</p>
-            </a>
-          </div>
-        </div>
-      </section>
+                <div
+                  class="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-[#c69b58]"
+                ></div>
+                <h3
+                  class="text-xs font-bold tracking-[0.25em] text-[#c69b58] uppercase mb-3"
+                >
+                  Visit The Academy
+                </h3>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#7b1e1e] mb-8">
+                  Find Your Rhythm
+                </h2>
 
-      <!-- Google Map -->
-      <section
-        class="w-full bg-[#fcf0dc] py-12 md:py-16"
-        data-aos="fade-up"
-        data-aos-duration="800"
-      >
-        <div class="container mx-auto px-4 md:px-6">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-[#7b1e1e] text-center mb-8 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max mx-auto"
-            style="font-family: 'Cinzel', serif"
-          >
-            Find Us
-          </h2>
-          <div class="flex flex-col md:flex-row gap-8 items-start">
-            <!-- Map Container -->
-            <div
-              class="w-full md:w-2/3 h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg border-2 border-[#c69b58]"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6135394531307!2d77.63047277588694!3d12.932542115731746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1467a995ae8f%3A0x4e10bbb8b4817c5e!2sTablaGyan%20Academy%20of%20Music!5e0!3m2!1sen!2sin!4v1752849095899!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="TablaGyan Academy Location"
-              ></iframe>
+                <div class="space-y-6 text-[#5a4a42]">
+                  <div class="flex items-start space-x-4">
+                    <svg
+                      class="w-6 h-6 text-[#c69b58] shrink-0 mt-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                    <p class="text-base leading-relaxed">
+                      <span
+                        class="font-semibold block text-[#2a0a0a] text-lg mb-1"
+                        >TablaGyan Academy</span
+                      >
+                      1234 Music Lane, Bengaluru<br />Karnataka 560034, India
+                    </p>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <svg
+                      class="w-6 h-6 text-[#c69b58] shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    <p class="text-base">contact@tablagyan.com</p>
+                  </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-[#c69b58]/20">
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    class="inline-flex items-center text-[#7b1e1e] font-bold tracking-wide text-sm hover:text-[#c69b58] transition-colors duration-300 group/link"
+                  >
+                    GET DIRECTIONS
+                    <svg
+                      class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="w-full lg:w-2/3 h-[350px] lg:h-auto relative bg-[#eee]"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085452499999!3d12.95396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf11c8a7090613458!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1695000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style="border: 0; filter: grayscale(20%) contrast(95%)"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
-            <!-- Address and CTA -->
-            <div class="w-full md:w-1/3 flex flex-col justify-center">
-              <h3
-                class="text-xl font-semibold text-[#4b2e2e] mb-4"
-                style="font-family: 'Libre Baskerville', serif"
-              >
-                TablaGyan Academy of Music
-              </h3>
-              <p
-                class="text-[#4b2e2e] mb-4"
-                style="font-family: 'Hubballi', sans-serif"
-              >
-                1234 Music Lane, Bengaluru, Karnataka 560034, India
-              </p>
+            <!--map end-->
+
+            <!--FAQ section heads up-->
+            <div class="w-full flex justify-center mt-12 mb-2 relative z-10">
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=12.932542,77.630473"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block bg-[#a94438] hover:bg-[#7b1e1e] text-white text-lg font-bold px-6 py-3 rounded-xl shadow-xl transition duration-300 border-2 border-[#c69b58] text-center"
+                href="#faq-section"
+                class="flex flex-col items-center group cursor-pointer"
               >
-                Get Directions
+                <span
+                  class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#c69b58] mb-2 group-hover:text-[#7b1e1e] transition-colors duration-300"
+                >
+                  Have Questions?
+                </span>
+                <div
+                  class="w-10 h-10 rounded-full border border-[#c69b58]/50 flex items-center justify-center animate-bounce bg-white/50 group-hover:bg-[#7b1e1e] group-hover:border-[#7b1e1e] transition-all duration-300"
+                >
+                  <svg
+                    class="w-5 h-5 text-[#7b1e1e] group-hover:text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </div>
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <!--FAQ-->
+        <section
+          id="faq-section"
+          class="w-full bg-[#FFF8F0] pt-12 pb-24 relative overflow-hidden font-serif"
+        >
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c69b58]/5 rounded-full blur-3xl pointer-events-none"
+          ></div>
+
+          <div class="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+              <h2
+                class="text-sm font-bold tracking-[0.25em] text-[#c69b58] uppercase mb-3"
+              >
+                Need Help?
+              </h2>
+              <h3
+                class="text-3xl md:text-4xl font-bold text-[#7b1e1e] font-serif"
+              >
+                Frequently Asked Questions
+              </h3>
+              <div class="w-24 h-1 bg-[#c69b58] mx-auto mt-6"></div>
+            </div>
+
+            <div class="space-y-6">
+              <div
+                class="accordion-item group border-b border-[#c69b58]/30"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <button
+                  class="accordion-header w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span
+                    class="text-xl md:text-2xl font-bold text-[#2a0a0a] group-hover:text-[#7b1e1e] transition-colors duration-300"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    General Information
+                  </span>
+                  <div
+                    class="icon-wrapper w-10 h-10 flex items-center justify-center rounded-full border border-[#c69b58] text-[#c69b58] group-hover:bg-[#7b1e1e] group-hover:text-white group-hover:border-[#7b1e1e] transition-all duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 transform transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <div class="pb-8 space-y-8 text-[#5a4a42]">
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        1. Who can join Tabla classes?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Anyone with an interest in Indian rhythm can join! We
+                        welcome children (5+ years), teens, adults, men/women &
+                        senior citizens too– no age limit to learn music!
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        2. Do I need any prior experience or musical background?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Not at all! Absolute beginners are most welcome. It is
+                        always good to start from scratch. We offer classes for
+                        Beginners, Intermediate, and Advanced levels.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        3. I’m not from Bangalore, India. Can I still learn?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Yes! Our online platform connects students worldwide. At
+                        any given point of time, 30% of our students are
+                        learning from outside India.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        4. I have a disability. Can I learn Music?
+                      </h4>
+                      <p class="leading-relaxed">
+                        You should definitely be learning Music unless you have
+                        concerns with your hearing, sitting, and playing
+                        adequates.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        5. Do I need to buy a set of Tabla before I enrol?
+                      </h4>
+                      <p class="leading-relaxed">
+                        No, it’s not necessary to buy a Tabla set before
+                        enrolling. A Tabla will be provided for you to use
+                        during your class sessions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item group border-b border-[#c69b58]/30"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <button
+                  class="accordion-header w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span
+                    class="text-xl md:text-2xl font-bold text-[#2a0a0a] group-hover:text-[#7b1e1e] transition-colors duration-300"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    Class Structure & Scheduling
+                  </span>
+                  <div
+                    class="icon-wrapper w-10 h-10 flex items-center justify-center rounded-full border border-[#c69b58] text-[#c69b58] group-hover:bg-[#7b1e1e] group-hover:text-white group-hover:border-[#7b1e1e] transition-all duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 transform transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <div class="pb-8 space-y-8 text-[#5a4a42]">
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        6. How long is each class?
+                      </h4>
+                      <p class="leading-relaxed">
+                        An Offline group class at the institute is typically 60
+                        minutes long. A One-on-One online/offline class would
+                        span about 30 minutes.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        7. What is the frequency & schedule?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Group Offline classes are on weekends, around 6 sessions
+                        (1 hr long) a month. Online classes are flexible.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        8. Can I choose my own time slot?
+                      </h4>
+                      <p class="leading-relaxed">
+                        <strong class="text-[#2a0a0a]">NO</strong> for Group
+                        Offline classes.
+                        <strong class="text-[#2a0a0a]">YES</strong> for Online
+                        classes.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        9. How big is each batch?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Each batch consists of just 5–6 musically curious minds.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        10. What if I miss classes?
+                      </h4>
+                      <p class="leading-relaxed">
+                        It is difficult to schedule catch-up sessions, but you
+                        can extend some batches to make up time.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        11. How are batches spread out?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Batches are a mix of Beginner & Intermediate students,
+                        focusing on individual growth in a group setting.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item group border-b border-[#c69b58]/30"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <button
+                  class="accordion-header w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span
+                    class="text-xl md:text-2xl font-bold text-[#2a0a0a] group-hover:text-[#7b1e1e] transition-colors duration-300"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    Class Modes: Online & Offline
+                  </span>
+                  <div
+                    class="icon-wrapper w-10 h-10 flex items-center justify-center rounded-full border border-[#c69b58] text-[#c69b58] group-hover:bg-[#7b1e1e] group-hover:text-white group-hover:border-[#7b1e1e] transition-all duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 transform transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <div class="pb-8 space-y-8 text-[#5a4a42]">
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        12. Are Tabla classes available online?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Absolutely! We offer LIVE one-on-one and group Tabla
+                        classes via Zoom.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        13. What do I need for OFFLINE classes?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Your own complete self! And a Practical Notes book.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        14. What do I need for ONLINE classes?
+                      </h4>
+                      <ul
+                        class="list-disc pl-5 space-y-2 marker:text-[#7b1e1e]"
+                      >
+                        <li>A good Tabla set</li>
+                        <li>Stable internet connection</li>
+                        <li>Good AV Device</li>
+                        <li>Quiet space</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item group border-b border-[#c69b58]/30"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <button
+                  class="accordion-header w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span
+                    class="text-xl md:text-2xl font-bold text-[#2a0a0a] group-hover:text-[#7b1e1e] transition-colors duration-300"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    Learning Material & Curriculum
+                  </span>
+                  <div
+                    class="icon-wrapper w-10 h-10 flex items-center justify-center rounded-full border border-[#c69b58] text-[#c69b58] group-hover:bg-[#7b1e1e] group-hover:text-white group-hover:border-[#7b1e1e] transition-all duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 transform transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <div class="pb-8 space-y-8 text-[#5a4a42]">
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        15. What will I learn?
+                      </h4>
+                      <p class="leading-relaxed">
+                        This is covered in our
+                        <a
+                          href="courses.html"
+                          class="text-[#7b1e1e] font-bold underline decoration-[#c69b58] decoration-2 underline-offset-4 hover:text-[#c69b58]"
+                          >Courses</a
+                        >
+                        page.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        16. Will I receive study material?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Yes! You will receive a tailor-made “TablaGyan Kosh”
+                        textbook, notes, and practice recordings.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        17. Do you offer certifications?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Yes, we are affiliated with
+                        <span class="font-bold text-[#2a0a0a]"
+                          >Akhil Bharatiya Gandharva Mahavidyalaya Mandal</span
+                        >.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        18. How is progress tracked?
+                      </h4>
+                      <p class="leading-relaxed">
+                        We use regular reviews, guided practice, and
+                        performances rather than rigid exams.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        19. What is the learning journey like?
+                      </h4>
+                      <p class="leading-relaxed">
+                        We follow the L.E.A.P. methodology (Learn, Enjoy, Apply,
+                        Perform).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item group border-b border-[#c69b58]/30"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <button
+                  class="accordion-header w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span
+                    class="text-xl md:text-2xl font-bold text-[#2a0a0a] group-hover:text-[#7b1e1e] transition-colors duration-300"
+                    style="font-family: 'Cinzel', serif"
+                  >
+                    Fees & Demo Classes
+                  </span>
+                  <div
+                    class="icon-wrapper w-10 h-10 flex items-center justify-center rounded-full border border-[#c69b58] text-[#c69b58] group-hover:bg-[#7b1e1e] group-hover:text-white group-hover:border-[#7b1e1e] transition-all duration-300"
+                  >
+                    <svg
+                      class="w-5 h-5 transform transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <div class="pb-8 space-y-8 text-[#5a4a42]">
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        20. What is the fee structure?
+                      </h4>
+                      <p class="leading-relaxed">
+                        There is a one-time registration fee. Monthly fees vary
+                        based on Class Type, Mode, and Level.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+                        21. Is there a Trial/Demo class available?
+                      </h4>
+                      <p class="leading-relaxed">
+                        Yes! A chargeable trial/DEMO session is available for
+                        novice students.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <script>
+        document.querySelectorAll(".accordion-header").forEach((button) => {
+          button.addEventListener("click", () => {
+            const accordionItem = button.parentElement;
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("svg");
+            const wrapper = button.querySelector(".icon-wrapper");
+
+            // Check if this item is currently open
+            const isOpen = content.style.maxHeight;
+
+            // Close all other items (Optional - remove this block if you want multiple open at once)
+            document.querySelectorAll(".accordion-content").forEach((c) => {
+              c.style.maxHeight = null;
+              // Reset icons for others
+              c.previousElementSibling
+                .querySelector("svg")
+                .classList.remove("rotate-45");
+              c.previousElementSibling
+                .querySelector(".icon-wrapper")
+                .classList.remove(
+                  "bg-[#7b1e1e]",
+                  "text-white",
+                  "border-[#7b1e1e]"
+                );
+              c.previousElementSibling
+                .querySelector(".icon-wrapper")
+                .classList.add("border-[#c69b58]", "text-[#c69b58]");
+            });
+
+            // Toggle current item
+            if (!isOpen) {
+              content.style.maxHeight = content.scrollHeight + "px";
+
+              // Rotate Icon to become an 'X'
+              icon.classList.add("rotate-45");
+
+              // Active State Styles for Icon Wrapper
+              wrapper.classList.remove("border-[#c69b58]", "text-[#c69b58]");
+              wrapper.classList.add(
+                "bg-[#7b1e1e]",
+                "text-white",
+                "border-[#7b1e1e]"
+              );
+            } else {
+              // If clicking the one that is already open, just close it (logic handled by "Close all" block above)
+              content.style.maxHeight = null;
+              icon.classList.remove("rotate-45");
+
+              wrapper.classList.add("border-[#c69b58]", "text-[#c69b58]");
+              wrapper.classList.remove(
+                "bg-[#7b1e1e]",
+                "text-white",
+                "border-[#7b1e1e]"
+              );
+            }
+          });
+        });
+      </script>
     </div>
 
     <div class="visitor-counter">
@@ -561,73 +1317,304 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-center text-sm p-6 text-gray-600">
-      <div class="flex justify-center space-x-6 mb-4">
-        <!-- Instagram -->
-        <a
-          href="https://instagram.com/tablagyan.official"
-          target="_blank"
-          class="text-gray-600 hover:text-pink-500 transition"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
-            />
-          </svg>
-        </a>
 
-        <!-- YouTube -->
-        <a
-          href="https://youtube.com/@tablagyanacademyofmusic"
-          target="_blank"
-          class="text-gray-600 hover:text-red-600 transition"
-        >
-          <svg
-            class="w-6 h-6"
-            viewBox="0 0 576 512"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
-            />
-          </svg>
-        </a>
 
-        <!-- Facebook -->
-        <a
-          href="https://facebook.com/tabla.gyan"
-          target="_blank"
-          class="text-gray-600 hover:text-blue-600 transition"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
-            />
-          </svg>
-        </a>
+      <div class="relative z-30">
+        <div class="h-2 w-full bg-[#c69b58]"></div>
 
-        <!-- WhatsApp -->
-        <a
-          href="https://wa.me/9845395205"
-          target="_blank"
-          class="text-gray-600 hover:text-green-500 transition"
+        <div
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <svg
-            class="w-6 h-6"
-            viewBox="0 0 448 512"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M380.9 97.1C339 55.2 283.5 32 224.8 32c-117.4 0-212.8 95.4-212.8 212.8 0 37.5 9.8 74.1 28.5 106.3L2 480l132.9-36.5c30.8 16.8 65.6 25.6 101.9 25.6h.1c117.3 0 212.8-95.4 212.8-212.8 0-58.7-23.2-114.1-65.8-156.2zM224.8 438.7c-30.5 0-60.2-8.2-86.2-23.7l-6.2-3.7-78.7 21.6 21-76.5-4-6.5c-17.7-28.8-27.1-62.1-27.1-96.4 0-100.1 81.5-181.6 181.6-181.6 48.5 0 94 18.9 128.3 53.2s53.2 79.8 53.2 128.3c0 100.1-81.5 181.7-181.6 181.7zm101.1-138.5c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.9-2.8-12.7 2.8-3.7 5.5-14.6 18.1-17.9 21.9-3.3 3.7-6.6 4.2-12.1 1.4-33.1-16.5-54.8-29.5-76.6-66.7-5.8-10 5.8-9.3 16.5-30.9 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.7-30.6-17.4-41.9-4.6-11.1-9.3-9.6-12.7-9.8-3.3-.2-7.1-.2-10.9-.2s-10.2 1.4-15.5 6.9c-5.3 5.5-20.2 19.7-20.2 48.1s20.7 55.8 23.5 59.6c2.8 3.7 40.8 62.3 99 87.4 13.8 6 24.6 9.6 33 12.3 13.9 4.4 26.5 3.8 36.5 2.3 11.1-1.7 32.8-13.4 37.4-26.3 4.6-12.8 4.6-23.8 3.3-26.3-1.3-2.5-5-3.9-10.5-6.6z"
-            />
-          </svg>
-        </a>
+          <div class="relative z-30">
+            <div class="h-2 w-full bg-[#c69b58]"></div>
+
+            <div
+              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+              <div class="relative z-30">
+                <div class="h-2 w-full bg-[#c69b58]"></div>
+
+                <div
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                  <div class="relative z-30">
+                    <div class="h-2 w-full bg-[#c69b58]"></div>
+
+                    <div
+                      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    >
+                      <div
+                        class="w-20 h-20 bg-[#c69b58] rounded-full flex items-center justify-center shadow-xl ring-4 ring-[#fcf0dc]"
+                      >
+                        <img
+                          src="/static/images/tabla.png"
+                          alt="Tabla drums icon"
+                          class="w-12 h-12 object-contain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <footer
+        class="bg-[#fcf0dc] text-[#4b2e2e] pt-16 pb-10 font-serif relative border-t-4 border-[#c69b58]"
+      >
+      
+        <div
+          class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+          style="
+            background-image: radial-gradient(#7b1e1e 1px, transparent 1px);
+            background-size: 20px 20px;
+          "
+        ></div>
 
-      <p>© 2025 TablaGyan. All rights reserved.</p>
-    </footer>
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-[43%_27%_30%] gap-8 mb-12 border-b border-[#7b1e1e]/10 pb-12"
+          >
+            <div class="space-y-6 pr-0 lg:pr-16">
+              <div class="flex items-center gap-3">
+                <h2
+                  class="text-3xl font-bold text-[#7b1e1e]"
+                  style="font-family: 'Cinzel', serif"
+                >
+                  Tabla<span class="text-[#c69b58]">Gyan</span>
+                </h2>
+              </div>
+
+              <p
+                class="text-sm leading-relaxed text-[#5a4a42]"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                A sanctuary for rhythm seekers. Preserving the ancient tradition
+                of Indian Classical Music while inspiring the next generation of
+                artists.
+              </p>
+
+              <div class="flex space-x-4 pt-2">
+                <a
+                  href="https://instagram.com/tablagyan.official"
+                  target="_blank"
+                  class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:from-[#7b1e1e] hover:via-[#7b1e1e] hover:to-[#7b1e1e] shadow-md hover:shadow-none"
+                >
+                  <svg
+                    class="w-5 h-5 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://youtube.com/@tablagyanacademyofmusic"
+                  target="_blank"
+                  class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#FF0000] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                >
+                  <svg
+                    class="w-5 h-5 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 576 512"
+                  >
+                    <path
+                      d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://facebook.com/tabla.gyan"
+                  target="_blank"
+                  class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#1877F2] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                >
+                  <svg
+                    class="w-5 h-5 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://wa.me/919845395205"
+                  target="_blank"
+                  class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group text-white bg-[#25D366] hover:bg-[#7b1e1e] shadow-md hover:shadow-none"
+                >
+                  <svg
+                    class="w-5 h-5 group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:pl-8">
+              <h3
+                class="text-sm font-bold text-[#7b1e1e] uppercase tracking-widest mb-6 border-b border-[#c69b58] pb-2 inline-block"
+              >
+                Explore
+              </h3>
+              <ul class="space-y-3 text-sm font-medium text-[#5a4a42]">
+                <li>
+                  <a
+                    href="about.html"
+                    class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                    ><span
+                      class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                    ></span>
+                    About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="courses.html"
+                    class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                    ><span
+                      class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                    ></span>
+                    Courses</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html#gurus"
+                    class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                    ><span
+                      class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                    ></span>
+                    Our Guru</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html"
+                    class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                    ><span
+                      class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                    ></span>
+                    Gallery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    class="hover:text-[#7b1e1e] hover:translate-x-1 transition-all flex items-center group"
+                    ><span
+                      class="w-1.5 h-1.5 bg-[#c69b58] rounded-full mr-3 group-hover:bg-[#7b1e1e]"
+                    ></span>
+                    Enrollment</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-sm font-bold text-[#7b1e1e] uppercase tracking-widest mb-6 border-b border-[#c69b58] pb-2 inline-block"
+              >
+                Visit Us
+              </h3>
+              <ul class="space-y-4 text-sm font-medium text-[#5a4a42]">
+                <li class="flex items-start group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 mt-1 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span
+                    >1234 Music Lane, Bengaluru,<br />Karnataka 560034,
+                    India</span
+                  >
+                </li>
+                <li class="flex items-center group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span>+91 98453 95205</span>
+                </li>
+                <li class="flex items-center group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-[#FFF8F0] border border-[#c69b58] flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#7b1e1e] group-hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span>contact@tablagyan.com</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="text-center text-xs text-[#5a4a42]/60 flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <p>&copy; 2025 TablaGyan Academy. All rights reserved.</p>
+            <div class="flex gap-4">
+              <a href="#" class="hover:text-[#7b1e1e]">Privacy Policy</a>
+              <span class="text-[#c69b58]">•</span>
+              <a href="#" class="hover:text-[#7b1e1e]">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <!-- At the end of <body> -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
