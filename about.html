@@ -73,88 +73,87 @@
   </head>
   <body class="pt-28 bg-white text-gray-800">
     <!-- Navigation Bar -->
+
     <nav
-      class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
+      class="fixed top-0 left-0 w-full z-50 bg-[#FFF8F0] shadow-xl px-6 py-4 flex justify-between items-center border-b-4 border-[#c69b58]"
     >
-      <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-4 md:space-x-6">
         <img
           src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full border-4 border-[#7b1e1e] shadow-lg"
         />
         <div class="flex flex-col">
           <span
-            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+            class="text-4xl md:text-5xl text-[#7b1e1e] font-bold leading-none"
+            style="font-family: 'Cinzel', serif"
           >
-            TablaGyan
+            Tabla<span class="text-[#c69b58]">Gyan</span>
           </span>
           <span
-            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+            class="text-xs md:text-sm text-[#3B3B3B] italic font-serif tracking-widest mt-1 ml-6"
+            style="font-family: 'Libre Baskerville', serif"
           >
             Academy of Music
           </span>
         </div>
       </div>
 
-      <!-- Desktop Navigation Links -->
       <div
-        class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative"
+        class="hidden md:flex space-x-8 text-[1rem] font-medium relative"
         style="font-family: 'Libre Baskerville', serif"
       >
         <a
           href="index.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
           >Home</a
         >
 
         <div class="relative group">
-          <div class="flex flex-col">
+          <a
+            href="about.html"
+            class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
+            >Academy</a
+          >
+          <div
+            class="absolute left-1/2 -translate-x-1/2 mt-3 w-52 bg-white border border-[#c69b58]/50 shadow-xl rounded-lg hidden group-hover:block transition-all duration-300 overflow-hidden z-50"
+          >
             <a
-              href="about.html"
-              class="text-[#3e2723] hover:text-[#b7410e] transition"
-              >TablaGyan</a
+              href="about.html#academy"
+              class="block px-4 py-3 text-[#3B3B3B] hover:bg-[#c69b58]/20 hover:text-[#7b1e1e] transition-colors"
+              >Our Philosophy</a
             >
-            <div
-              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
+            <a
+              href="about.html#gurus"
+              class="block px-4 py-3 text-[#3B3B3B] hover:bg-[#c69b58]/20 hover:text-[#7b1e1e] transition-colors"
+              >Our Gurus</a
             >
-              <a
-                href="about.html#academy"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >TablaGyan Academy</a
-              >
-              <a
-                href="about.html#gurus"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >TablaGyan Gurus</a
-              >
-            </div>
           </div>
         </div>
 
         <a
           href="courses.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
           >Courses</a
         >
         <a
           href="gallery.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
           >Gallery</a
         >
         <a
           href="contact.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
           >Contact</a
         >
+
       </div>
 
-      <!-- Mobile Menu Toggle (Checkbox) -->
       <input type="checkbox" id="menu-toggle" class="hidden" />
 
-      <!-- Mobile Menu Button -->
       <label
         for="menu-toggle"
-        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+        class="md:hidden p-2 text-[#7b1e1e] cursor-pointer hover:text-[#c69b58]"
       >
         <svg
           class="w-7 h-7"
@@ -171,24 +170,56 @@
         </svg>
       </label>
 
-      <!-- Mobile Menu Dropdown -->
       <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        class="absolute top-full left-0 right-0 bg-[#FFF8F0] shadow-2xl transition-all duration-500 max-h-0 overflow-hidden"
         id="menu-content"
       >
         <div
-          class="flex flex-col space-y-2 p-4 text-lg"
+          class="flex flex-col space-y-2 p-4 text-lg text-[#3B3B3B]"
           style="font-family: 'Libre Baskerville', serif"
         >
-          <a href="index.html">Home</a>
-          <a href="about.html">TablaGyan Academy</a>
-          <a href="about.html#gurus">TablaGyan Gurus</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="courses.html">Courses</a>
-          <a href="contact.html">Contact</a>
+          <a
+            href="index.html"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
+            >TablaGyan Academy</a
+          >
+          <a
+            href="about.html#gurus"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30 pl-6 text-sm"
+            >— Gurus</a
+          >
+          <a
+            href="courses.html"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
+            >Courses</a
+          >
+          <a
+            href="gallery.html"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
+            >Gallery</a
+          >
+          <a
+            href="contact.html"
+            class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
+            >Contact</a
+          >
+          
         </div>
       </div>
     </nav>
+
+    <style>
+      /* This CSS is essential to target the dropdown content */
+      #menu-toggle:checked ~ #menu-content {
+        max-height: 400px; /* Adjust height based on content */
+        border-top: 2px solid #c69b58;
+      }
+    </style>
 
     <!-- Page Content -->
     <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
