@@ -193,7 +193,6 @@
           class="text-[#3B3B3B] hover:text-[#7b1e1e] transition-colors duration-300"
           >Contact</a
         >
-
       </div>
 
       <input type="checkbox" id="menu-toggle" class="hidden" />
@@ -255,7 +254,6 @@
             class="hover:text-[#7b1e1e] py-2 border-b border-[#c69b58]/30"
             >Contact</a
           >
-         
         </div>
       </div>
     </nav>
@@ -363,9 +361,9 @@
             <p
               class="text-gray-300 md:text-gray-200 text-base leading-relaxed mb-6 font-sans text-shadow-sm"
             >
-              A community that values tradition, expression, and the joy of
-              shared rhythm. At TablaGyan, we don’t just play beats — we live
-              them.
+              A sanctuary for rhythm seekers. Preserving the ancient tradition
+              of Indian Classical Music while inspiring the next generation of
+              artists.
             </p>
 
             <a
@@ -394,7 +392,29 @@
           </div>
         </div>
       </section>
+      <script>
+        // ... (Your other scripts like Swiper, AOS, Music Toggle) ...
 
+        // === TEXT ROTATOR LOGIC ===
+        const texts = document.querySelectorAll("#text-rotator .rotating-text");
+        let current = 0;
+
+        // Check if elements exist before starting the interval
+        if (texts.length > 1) {
+          setInterval(() => {
+            // 1. Hide the current text (English)
+            texts[current].classList.remove("opacity-100");
+            texts[current].classList.add("opacity-0");
+
+            // 2. Move to the next index (e.g., Hindi)
+            current = (current + 1) % texts.length;
+
+            // 3. Show the next text
+            texts[current].classList.remove("opacity-0");
+            texts[current].classList.add("opacity-100");
+          }, 4000); // Cycles every 4 seconds
+        }
+      </script>
       <!-- Courses Offered -->
       <section
         id="courses"
@@ -429,7 +449,7 @@
                 class="text-2xl md:text-3xl font-bold text-[#2a0a0a] uppercase tracking-widest"
                 style="font-family: 'Cinzel', serif"
               >
-                The Art of Tabla
+                Tabla
               </h3>
               <div class="h-[1px] w-12 bg-[#c69b58]/50"></div>
             </div>
@@ -1139,7 +1159,7 @@
           <h2
             class="text-sm font-bold tracking-[0.25em] text-[#c69b58] uppercase mb-3"
           >
-            Watch & Learn
+            Harmony in Motion
           </h2>
           <h3
             class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
@@ -1433,7 +1453,7 @@
 
           <div class="text-center mt-8">
             <a
-              href="https://g.page/r/YourGoogleReviewLink"
+              href="https://www.google.com/search?q=TablaGyan+Academy+of+Music+Reviews"
               target="_blank"
               class="inline-flex items-center text-[#7b1e1e] hover:text-[#c69b58] transition-colors text-sm font-bold tracking-widest uppercase border-b border-[#7b1e1e] hover:border-[#c69b58] pb-1"
             >
@@ -1485,8 +1505,8 @@
                 class="text-[#FFF8F0]/80 text-lg leading-relaxed font-light"
                 style="font-family: 'Hubballi', sans-serif"
               >
-                Join our legacy of tradition and excellence. Let rhythm and
-                melody transform your life today.
+                Join our legacy of tradition and excellence. <br />Let rhythm
+                and melody transform your life today.
               </p>
             </div>
 
@@ -1585,7 +1605,7 @@
               </div>
 
               <p
-                class="text-sm leading-relaxed text-[#5a4a42]"
+                class="text-lg leading-relaxed text-[#5a4a42]"
                 style="font-family: 'Hubballi', sans-serif"
               >
                 A sanctuary for rhythm seekers. Preserving the ancient tradition
@@ -1752,8 +1772,8 @@
                     </svg>
                   </div>
                   <span
-                    >1234 Music Lane, Bengaluru,<br />Karnataka 560034,
-                    India</span
+                    >2nd Floor, 144-A, 2nd Main Rd, S.T. Bed, S T Bed Layout,
+                    Koramangala, Bengaluru, Karnataka 560047</span
                   >
                 </li>
                 <li class="flex items-center group">
@@ -1774,7 +1794,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <span>+91 98453 95205</span>
+                  <span>+91 98458 06205</span>
                 </li>
                 <li class="flex items-center group">
                   <div
@@ -1794,7 +1814,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <span>contact@tablagyan.com</span>
+                  <span>tablagyan@gmail.com</span>
                 </li>
               </ul>
             </div>
