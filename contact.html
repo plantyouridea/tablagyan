@@ -1775,66 +1775,55 @@
         });
 
         // Form submission handler
-        document
-          .getElementById("contactForm")
-          .addEventListener("submit", async function (event) {
-            event.preventDefault();
+        document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-            const form = this;
-            const formData = new FormData(form);
+        const form = this;
+        const formData = new FormData(form);
 
-            // Validate required fields
-            const name = formData.get("entry.509524468");
-            const phone = formData.get("entry.1597249937");
-            const purpose = formData.get("entry.883866292");
-            const message = formData.get("entry.775920779");
+        // --- VALIDATION (Keep the user's existing logic) ---
+        const name = formData.get("entry.509524468");
+        const phone = formData.get("entry.1597249937");
+        const purpose = formData.get("entry.883866292");
+        const message = formData.get("entry.775920779");
 
-            if (!name || !phone || !purpose) {
-              alert(
-                "Please fill out all required fields: Name, Phone Number, and Purpose."
-              );
-              return;
-            }
-            if (purpose === "Other" && !message) {
-              alert("Please provide a message for 'Other' purpose.");
-              return;
-            }
+        if (!name || !phone || !purpose) {
+            alert("Please fill out all required fields: Name, Phone Number, and Purpose.");
+            return;
+        }
+        if (purpose === "Other" && !message) {
+            alert("Please provide a message for 'Other' purpose.");
+            return;
+        }
+        // --- END VALIDATION ---
 
-            try {
-              const response = await fetch(form.action, {
+        try {
+            // SUBMIT: We must keep mode: "no-cors" for Google Forms, but we assume success on resolution.
+            await fetch(form.action, {
                 method: "POST",
                 body: formData,
                 mode: "no-cors",
-              });
+            });
 
-              alert("Form submitted successfully!");
-              form.reset();
-              document
-                .querySelectorAll(".purpose-btn, .course-btn")
-                .forEach((btn) => {
-                  btn.classList.remove(
-                    "bg-[#a94438]",
-                    "text-white",
-                    "border-[#7b1e1e]"
-                  );
-                  btn.classList.add(
-                    "bg-[#fffaf0]",
-                    "text-[#7b1e1e]",
-                    "border-[#c69b58]"
-                  );
-                  btn.classList.remove("selected");
-                });
-              document.getElementById("enrollOptions").classList.add("hidden");
-              document.getElementById("hiddenCourseInputs").innerHTML = "";
-              document.getElementById("messageBox").required = false;
-            } catch (error) {
-              console.error("Error submitting form:", error);
-              alert(
-                "An error occurred while submitting the form. Please try again."
-              );
-            }
+            // --- UI Cleanup (Guaranteed Success) ---
+            alert("Form submitted successfully! We will contact you soon.");
+            form.reset();
+            
+            document.querySelectorAll(".purpose-btn, .course-btn").forEach((btn) => {
+                btn.classList.remove("selected", "bg-[#a94438]", "text-white", "border-[#7b1e1e]");
+                btn.classList.add("bg-[#fffaf0]", "text-[#7b1e1e]", "border-[#c69b58]");
+            });
+            document.getElementById("enrollOptions").classList.add("hidden");
+            document.getElementById("hiddenCourseInputs").innerHTML = "";
+            
+        } catch (error) {
+            // This catches severe network errors or JS execution failure.
+            console.error("Network/Execution Error after submission attempt:", error);
+            alert("Submission failed due to a network error. Please check your connection and try again.");
+        }
+    });
           });
-      });
+    
     </script>
   </body>
 </html>
